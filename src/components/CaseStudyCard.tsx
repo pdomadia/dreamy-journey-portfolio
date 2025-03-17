@@ -1,5 +1,6 @@
 
 import React from 'react';
+import { Link } from 'react-router-dom';
 import { ArrowRight } from 'lucide-react';
 import { cn } from '@/lib/utils';
 
@@ -43,13 +44,13 @@ const CaseStudyCard: React.FC<CaseStudyCardProps> = ({
       <div className="p-6 flex-grow flex flex-col">
         <h3 className="text-xl font-medium mb-3">{title}</h3>
         <p className="text-charcoal/80 mb-4 flex-grow">{description}</p>
-        <a 
-          href={link} 
+        <Link 
+          to={link} 
           className="inline-flex items-center gap-2 text-forest-dark hover:text-forest-DEFAULT group-hover:gap-3 transition-all duration-300"
         >
           View case study
           <ArrowRight size={16} className="transition-transform group-hover:translate-x-1" />
-        </a>
+        </Link>
       </div>
     </div>
   );
