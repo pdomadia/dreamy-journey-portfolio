@@ -59,10 +59,10 @@ export default {
         },
         cream: '#F8F5F2',
         sand: '#D4C8BE',
-        stone: '#A69B8D',
+        stone: '#4A5043',  // Darker, more accessible green-gray for text
         sage: '#BDC7C1',
         terracotta: '#D4A79A',
-        charcoal: '#2D3142',
+        charcoal: '#3A4538',  // Dark sage-green instead of purple
         earthy: {
           light: '#F2F1E9',
           DEFAULT: '#E0DDD1',
@@ -70,8 +70,8 @@ export default {
         },
         forest: {
           light: '#D1D9CF',
-          DEFAULT: '#A3B899',
-          dark: '#6B8976',
+          DEFAULT: '#7C9473',  // More saturated, accessible green
+          dark: '#4A5D47',     // Darker green for better contrast
         },
       },
       borderRadius: {

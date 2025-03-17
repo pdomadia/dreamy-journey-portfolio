@@ -29,7 +29,7 @@ const Hero: React.FC = () => {
           <div className="overflow-hidden animate-fade-in" style={{ animationDelay: '1s' }}>
             <a
               href="#about"
-              className="group inline-flex items-center gap-2 bg-[#A3B899] text-earthy-light px-6 py-3 rounded-md hover:bg-forest-dark transition-all duration-300 hover:gap-3"
+              className="group inline-flex items-center gap-2 bg-[#7C9473] text-earthy-light px-6 py-3 rounded-md hover:bg-forest-dark transition-all duration-300 hover:gap-3"
             >
               Explore my journey
               <ArrowDown size={18} className="transition-transform group-hover:translate-y-1" />
@@ -50,7 +50,7 @@ const Hero: React.FC = () => {
       </div>
       
       <div className="absolute bottom-10 left-1/2 transform -translate-x-1/2">
-        <ArrowDown size={24} className="text-[#A3B899]/70" />
+        <ArrowDown size={24} className="text-[#7C9473]/70" />
       </div>
     </section>
   );
