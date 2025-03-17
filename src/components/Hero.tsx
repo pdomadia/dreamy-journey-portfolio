@@ -1,6 +1,8 @@
+
 import React, { useState, useEffect } from 'react';
 import { ArrowDown, Sparkles } from 'lucide-react';
 import { Avatar, AvatarImage, AvatarFallback } from "@/components/ui/avatar";
+
 const Hero: React.FC = () => {
   const [isHovering, setIsHovering] = useState(false);
   const [rotation, setRotation] = useState(0);
@@ -24,6 +26,7 @@ const Hero: React.FC = () => {
       window.removeEventListener('mousemove', handleMouseMove);
     };
   }, []);
+  
   return <section className="min-h-screen flex flex-col justify-center relative overflow-hidden pt-20">
       <div className="absolute inset-0 -z-10">
         <div className="absolute top-0 left-0 w-full h-full bg-gradient-to-br from-earthy-light via-sage-light/30 to-cream/70"></div>
@@ -88,8 +91,8 @@ const Hero: React.FC = () => {
           transition: 'transform 0.3s ease-out'
         }}>
             <Avatar className="w-56 h-56 relative rounded-full overflow-hidden shadow-lg hover:shadow-xl transition-all duration-500 transform group-hover:scale-105">
-              <AvatarImage src="https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Your Name" />
-              <AvatarFallback className="bg-sage-light text-hunter-DEFAULT text-3xl">YN</AvatarFallback>
+              <AvatarImage src="/lovable-uploads/e869e172-fe18-48bd-a549-1e51ac024a50.png" alt="Priti Domadia" />
+              <AvatarFallback className="bg-sage-light text-hunter-DEFAULT text-3xl">PD</AvatarFallback>
             </Avatar>
             <div className="absolute top-0 left-0 w-full h-full flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
               <Sparkles className="text-white drop-shadow-lg w-16 h-16 animate-sparkle" />
@@ -103,4 +106,5 @@ const Hero: React.FC = () => {
       </div>
     </section>;
 };
+
 export default Hero;
