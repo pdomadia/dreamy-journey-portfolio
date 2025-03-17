@@ -70,7 +70,7 @@ const Hero: React.FC = () => {
           <div className="overflow-hidden animate-fade-in" style={{ animationDelay: '1s' }}>
             <a
               href="#about"
-              className="group inline-flex items-center gap-2 bg-hunter-DEFAULT text-earthy-light px-6 py-3 rounded-md hover:bg-hunter-light transition-all duration-300 hover:gap-3"
+              className="group inline-flex items-center gap-2 bg-hunter-DEFAULT text-white px-6 py-3 rounded-md hover:bg-hunter-light transition-all duration-300 hover:gap-3"
               onMouseEnter={() => setIsHovering(true)}
               onMouseLeave={() => setIsHovering(false)}
             >
