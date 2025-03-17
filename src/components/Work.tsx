@@ -21,7 +21,7 @@ const Work: React.FC = () => {
     {
       period: '2014 - 2019',
       role: 'Pediatric Occupational Therapist',
-      company: 'Children's Rehabilitation Center',
+      company: 'Children\'s Rehabilitation Center',
       description: 'Provided therapy services to children with developmental challenges, collaborated with multidisciplinary teams, and designed custom intervention plans.',
       icon: <BriefcaseMedical size={20} className="text-terracotta" />,
     },

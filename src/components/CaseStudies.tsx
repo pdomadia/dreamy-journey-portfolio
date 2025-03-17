@@ -7,7 +7,7 @@ const CaseStudies: React.FC = () => {
     {
       title: 'Product Design in Health Tech',
       subtitle: 'UX & UI Design',
-      description: 'Streamlining the scheduling experience for doctors' offices to reduce administrative burden and improve patient access to care.',
+      description: 'Streamlining the scheduling experience for doctors\' offices to reduce administrative burden and improve patient access to care.',
       imageUrl: 'https://images.unsplash.com/photo-1576091160550-2173dba999ef?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
       link: '/case-study/health-tech',
     },
