@@ -18,8 +18,8 @@ const Navbar: React.FC = () => {
 
   const navLinks = [
     { name: 'About', href: '#about' },
-    { name: 'Work', href: '#work' },
     { name: 'Case Studies', href: '#case-studies' },
+    { name: 'Work', href: '#work' },
     { name: 'Contact', href: '#contact' }
   ];
 
@@ -28,14 +28,14 @@ const Navbar: React.FC = () => {
       className={cn(
         'fixed top-0 w-full z-40 transition-all duration-500',
         isScrolled 
-          ? 'bg-cream/90 backdrop-blur-sm shadow-sm py-3' 
+          ? 'bg-earthy-light/90 backdrop-blur-sm shadow-sm py-3' 
           : 'bg-transparent py-5'
       )}
     >
       <div className="container flex justify-between items-center">
         <a 
           href="#" 
-          className="text-charcoal font-medium text-xl tracking-tight hover:text-terracotta transition-colors duration-300"
+          className="text-charcoal font-medium text-xl tracking-tight hover:text-forest-dark transition-colors duration-300"
         >
           Portfolio
         </a>
@@ -64,12 +64,12 @@ const Navbar: React.FC = () => {
 
         {/* Mobile Navigation */}
         {isMobileMenuOpen && (
-          <div className="absolute top-full left-0 right-0 bg-cream/95 backdrop-blur-sm shadow-md flex flex-col py-5 md:hidden animate-fade-in">
+          <div className="absolute top-full left-0 right-0 bg-earthy-light/95 backdrop-blur-sm shadow-md flex flex-col py-5 md:hidden animate-fade-in">
             {navLinks.map((link) => (
               <a 
                 key={link.name} 
                 href={link.href} 
-                className="px-8 py-3 hover:bg-sand/20 transition-colors duration-300"
+                className="px-8 py-3 hover:bg-earthy-DEFAULT/20 transition-colors duration-300"
                 onClick={() => setIsMobileMenuOpen(false)}
               >
                 {link.name}

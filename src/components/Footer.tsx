@@ -5,7 +5,7 @@ const Footer: React.FC = () => {
   const currentYear = new Date().getFullYear();
   
   return (
-    <footer className="py-8 bg-charcoal text-cream/70">
+    <footer className="py-8 bg-charcoal text-earthy-light/70">
       <div className="container mx-auto px-6 flex flex-col md:flex-row justify-between items-center">
         <p>© {currentYear} Your Name. All rights reserved.</p>
         
@@ -14,7 +14,7 @@ const Footer: React.FC = () => {
             <li>
               <a 
                 href="#" 
-                className="hover:text-terracotta transition-colors duration-300"
+                className="hover:text-forest-light transition-colors duration-300"
               >
                 Privacy Policy
               </a>
@@ -22,7 +22,7 @@ const Footer: React.FC = () => {
             <li>
               <a 
                 href="#" 
-                className="hover:text-terracotta transition-colors duration-300"
+                className="hover:text-forest-light transition-colors duration-300"
               >
                 Credits
               </a>

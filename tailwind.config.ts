@@ -63,8 +63,16 @@ export default {
         sage: '#BDC7C1',
         terracotta: '#D4A79A',
         charcoal: '#2D3142',
-        lavender: '#DDD1E9', // Languid Lavender from your palette
-        lavenderDark: '#9A7AA0', // Darker shade for contrast
+        earthy: {
+          light: '#F2F1E9',
+          DEFAULT: '#E0DDD1',
+          dark: '#C4BEA5',
+        },
+        forest: {
+          light: '#D1D9CF',
+          DEFAULT: '#A3B899',
+          dark: '#6B8976',
+        },
       },
       borderRadius: {
         lg: 'var(--radius)',

@@ -28,10 +28,10 @@ const CaseStudies: React.FC = () => {
   ];
 
   return (
-    <section id="case-studies" className="py-20 md:py-28 relative">
+    <section id="case-studies" className="py-20 md:py-28 relative bg-earthy-DEFAULT/30">
       <div className="container-custom">
         <div className="text-center mb-16 reveal">
-          <span className="inline-block text-sm md:text-base font-medium text-[#9A7AA0] bg-[#DDD1E9]/20 px-3 py-1 rounded-full mb-4">
+          <span className="inline-block text-sm md:text-base font-medium text-forest-dark bg-forest-light/40 px-3 py-1 rounded-full mb-4">
             Featured Work
           </span>
           <h2 className="section-title mx-auto">Case Studies</h2>

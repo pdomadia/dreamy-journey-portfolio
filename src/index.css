@@ -7,35 +7,35 @@
 
 @layer base {
   :root {
-    --background: 270 33% 97%;
-    --foreground: 222 14% 22%;
+    --background: 43 30% 94%;
+    --foreground: 220 14% 22%;
 
-    --card: 270 33% 97%;
-    --card-foreground: 222 14% 22%;
+    --card: 43 30% 94%;
+    --card-foreground: 220 14% 22%;
 
-    --popover: 270 33% 97%;
-    --popover-foreground: 222 14% 22%;
+    --popover: 43 30% 94%;
+    --popover-foreground: 220 14% 22%;
 
-    --primary: 222 14% 22%;
-    --primary-foreground: 270 33% 97%;
+    --primary: 220 14% 22%;
+    --primary-foreground: 43 30% 94%;
 
-    --secondary: 270 35% 87%;
-    --secondary-foreground: 222 14% 22%;
+    --secondary: 90 12% 83%;
+    --secondary-foreground: 220 14% 22%;
 
-    --muted: 270 35% 87%;
-    --muted-foreground: 222 14% 22%;
+    --muted: 90 12% 83%;
+    --muted-foreground: 220 14% 22%;
 
-    --accent: 282 28% 55%;
-    --accent-foreground: 222 14% 22%;
+    --accent: 30 20% 72%;
+    --accent-foreground: 220 14% 22%;
 
     --destructive: 0 84.2% 60.2%;
     --destructive-foreground: 210 40% 98%;
 
-    --border: 270 35% 87%;
-    --input: 270 35% 87%;
-    --ring: 222 14% 22%;
+    --border: 90 12% 83%;
+    --input: 90 12% 83%;
+    --ring: 220 14% 22%;
 
-    --radius: 0.75rem;
+    --radius: 0.5rem;
   }
 
   * {
@@ -47,8 +47,8 @@
   }
   
   body {
-    @apply bg-cream text-charcoal;
-    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='4' height='4' viewBox='0 0 4 4'%3E%3Cpath fill='%239a7aa0' fill-opacity='0.1' d='M1 3h1v1H1V3zm2-2h1v1H3V1z'%3E%3C/path%3E%3C/svg%3E");
+    @apply bg-earthy-light text-charcoal;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='4' height='4' viewBox='0 0 4 4'%3E%3Cpath fill='%23A3B899' fill-opacity='0.1' d='M1 3h1v1H1V3zm2-2h1v1H3V1z'%3E%3C/path%3E%3C/svg%3E");
   }
 }
 
@@ -57,7 +57,7 @@
     @apply text-3xl md:text-4xl font-serif font-medium mb-6 relative inline-block;
     &::after {
       content: "";
-      @apply absolute bottom-0 left-0 w-full h-[2px] bg-[#9A7AA0] transform scale-x-0 origin-left transition-transform duration-300;
+      @apply absolute bottom-0 left-0 w-full h-[2px] bg-forest-DEFAULT transform scale-x-0 origin-left transition-transform duration-300;
     }
     &:hover::after {
       @apply scale-x-100;
@@ -76,7 +76,7 @@
     @apply relative inline-block;
     &::after {
       content: "";
-      @apply absolute bottom-0 left-0 w-full h-[1px] bg-[#9A7AA0] transform scale-x-0 origin-left transition-transform duration-300;
+      @apply absolute bottom-0 left-0 w-full h-[1px] bg-forest-DEFAULT transform scale-x-0 origin-left transition-transform duration-300;
     }
     &:hover::after {
       @apply scale-x-100;
@@ -84,10 +84,10 @@
   }
   
   .nav-link {
-    @apply relative px-2 py-1 text-charcoal transition-colors duration-300 hover:text-[#9A7AA0];
+    @apply relative px-2 py-1 text-charcoal transition-colors duration-300 hover:text-forest-dark;
     &::after {
       content: "";
-      @apply absolute bottom-0 left-0 w-full h-[1px] bg-[#9A7AA0] transform scale-x-0 origin-center transition-transform duration-300;
+      @apply absolute bottom-0 left-0 w-full h-[1px] bg-forest-DEFAULT transform scale-x-0 origin-center transition-transform duration-300;
     }
     &:hover::after {
       @apply scale-x-100;
@@ -95,7 +95,7 @@
   }
   
   .card-hover {
-    @apply transition-all duration-500 hover:shadow-lg hover:-translate-y-1;
+    @apply transition-all duration-500 hover:shadow-md hover:-translate-y-1;
   }
   
   .content-reveal {
@@ -103,7 +103,7 @@
   }
   
   .grain-overlay {
-    @apply pointer-events-none fixed inset-0 z-50 opacity-20;
+    @apply pointer-events-none fixed inset-0 z-50 opacity-10;
     background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 400 400' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
   }
 }

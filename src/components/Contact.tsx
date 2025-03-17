@@ -4,28 +4,28 @@ import { Mail, Linkedin, FileText } from 'lucide-react';
 
 const Contact: React.FC = () => {
   return (
-    <section id="contact" className="py-20 md:py-28 bg-charcoal text-cream relative">
+    <section id="contact" className="py-20 md:py-28 bg-charcoal text-earthy-light relative">
       <div className="absolute inset-0 overflow-hidden -z-10">
-        <div className="absolute top-0 left-0 w-full h-full bg-[radial-gradient(circle_at_30%_50%,rgba(212,167,154,0.1),transparent_60%)]"></div>
+        <div className="absolute top-0 left-0 w-full h-full bg-[radial-gradient(circle_at_30%_50%,rgba(163,184,153,0.1),transparent_60%)]"></div>
         <div className="absolute bottom-0 right-0 w-full h-full bg-[radial-gradient(circle_at_70%_80%,rgba(189,199,193,0.1),transparent_60%)]"></div>
       </div>
       
       <div className="container-custom">
         <div className="max-w-4xl mx-auto text-center reveal">
-          <span className="inline-block text-sm md:text-base font-medium text-terracotta bg-terracotta/20 px-3 py-1 rounded-full mb-4">
+          <span className="inline-block text-sm md:text-base font-medium text-forest-light bg-forest-dark/20 px-3 py-1 rounded-full mb-4">
             Let's Connect
           </span>
           <h2 className="text-3xl md:text-4xl font-serif font-medium mb-6">
             Ready to collaborate on something amazing?
           </h2>
-          <p className="text-cream/80 mb-12 max-w-2xl mx-auto">
+          <p className="text-earthy-light/80 mb-12 max-w-2xl mx-auto">
             I'm always open to discussing new projects, creative ideas, or opportunities to be part of your vision. Feel free to reach out for collaborations or just a friendly hello!
           </p>
           
           <div className="flex flex-col md:flex-row items-center justify-center gap-5 reveal reveal-delay-1">
             <a 
               href="mailto:hello@youremail.com" 
-              className="flex items-center gap-2 bg-terracotta/90 hover:bg-terracotta text-white px-6 py-3 rounded-full transition-colors duration-300 w-full md:w-auto justify-center"
+              className="flex items-center gap-2 bg-forest-DEFAULT hover:bg-forest-dark text-white px-6 py-3 rounded-md transition-colors duration-300 w-full md:w-auto justify-center"
             >
               <Mail size={18} />
               <span>Get in Touch</span>
@@ -35,7 +35,7 @@ const Contact: React.FC = () => {
               href="https://linkedin.com/in/yourname" 
               target="_blank" 
               rel="noopener noreferrer" 
-              className="flex items-center gap-2 bg-cream/10 hover:bg-cream/20 text-cream px-6 py-3 rounded-full transition-colors duration-300 w-full md:w-auto justify-center"
+              className="flex items-center gap-2 bg-earthy-light/10 hover:bg-earthy-light/20 text-earthy-light px-6 py-3 rounded-md transition-colors duration-300 w-full md:w-auto justify-center"
             >
               <Linkedin size={18} />
               <span>LinkedIn</span>
@@ -45,7 +45,7 @@ const Contact: React.FC = () => {
               href="/resume.pdf" 
               target="_blank" 
               rel="noopener noreferrer" 
-              className="flex items-center gap-2 bg-cream/10 hover:bg-cream/20 text-cream px-6 py-3 rounded-full transition-colors duration-300 w-full md:w-auto justify-center"
+              className="flex items-center gap-2 bg-earthy-light/10 hover:bg-earthy-light/20 text-earthy-light px-6 py-3 rounded-md transition-colors duration-300 w-full md:w-auto justify-center"
             >
               <FileText size={18} />
               <span>Download Resume</span>

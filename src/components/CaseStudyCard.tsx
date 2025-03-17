@@ -23,7 +23,7 @@ const CaseStudyCard: React.FC<CaseStudyCardProps> = ({
   return (
     <div 
       className={cn(
-        "flex flex-col rounded-xl overflow-hidden bg-white shadow-sm border border-sand/20 reveal card-hover transition-all duration-500 group",
+        "flex flex-col rounded-md overflow-hidden bg-white shadow-sm border border-earthy-dark/20 reveal card-hover transition-all duration-500 group",
         index === 1 ? "reveal-delay-1" : index === 2 ? "reveal-delay-2" : ""
       )}
     >
@@ -34,7 +34,7 @@ const CaseStudyCard: React.FC<CaseStudyCardProps> = ({
         />
         <div className="absolute inset-0 bg-gradient-to-t from-charcoal/50 to-transparent opacity-70" />
         <div className="absolute bottom-0 left-0 p-6">
-          <span className="text-xs text-cream/90 bg-charcoal/50 backdrop-blur-sm px-3 py-1 rounded-full">
+          <span className="text-xs text-earthy-light bg-charcoal/50 backdrop-blur-sm px-3 py-1 rounded-full">
             {subtitle}
           </span>
         </div>
@@ -45,7 +45,7 @@ const CaseStudyCard: React.FC<CaseStudyCardProps> = ({
         <p className="text-charcoal/80 mb-4 flex-grow">{description}</p>
         <a 
           href={link} 
-          className="inline-flex items-center gap-2 text-terracotta hover:text-terracotta/80 group-hover:gap-3 transition-all duration-300"
+          className="inline-flex items-center gap-2 text-forest-dark hover:text-forest-DEFAULT group-hover:gap-3 transition-all duration-300"
         >
           View case study
           <ArrowRight size={16} className="transition-transform group-hover:translate-x-1" />
