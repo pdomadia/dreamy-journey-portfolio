@@ -60,18 +60,27 @@ export default {
         cream: '#F8F5F2',
         sand: '#D4C8BE',
         stone: '#4A5043',  // Darker, more accessible green-gray for text
-        sage: '#BDC7C1',
+        sage: {
+          light: '#E6EFE9',
+          DEFAULT: '#BED3C2',
+          dark: '#8CAB92',
+        },
+        mint: {
+          light: '#D6F5E0',
+          DEFAULT: '#A7E1B8',
+          dark: '#65C87F',
+        },
+        emerald: {
+          light: '#DAFCE4',
+          DEFAULT: '#38B261',
+          dark: '#106334',
+        },
         terracotta: '#D4A79A',
         charcoal: '#3A4538',  // Dark sage-green instead of purple
         earthy: {
-          light: '#F2F1E9',
-          DEFAULT: '#E0DDD1',
-          dark: '#C4BEA5',
-        },
-        forest: {
-          light: '#D1D9CF',
-          DEFAULT: '#7C9473',  // More saturated, accessible green
-          dark: '#4A5D47',     // Darker green for better contrast
+          light: '#F5F7F2',
+          DEFAULT: '#E8EFE3',
+          dark: '#D0DBBC',
         },
       },
       borderRadius: {
@@ -117,6 +126,10 @@ export default {
         'float': {
           '0%, 100%': { transform: 'translateY(0)' },
           '50%': { transform: 'translateY(-10px)' }
+        },
+        'sparkle': {
+          '0%, 100%': { opacity: '0' },
+          '50%': { opacity: '1' }
         }
       },
       animation: {
@@ -126,7 +139,8 @@ export default {
         'fade-in-left': 'fade-in-left 0.7s ease-out forwards',
         'fade-in-right': 'fade-in-right 0.7s ease-out forwards',
         'text-reveal': 'text-reveal 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards',
-        'float': 'float 6s ease-in-out infinite'
+        'float': 'float 6s ease-in-out infinite',
+        'sparkle': 'sparkle 2s ease-in-out infinite'
       }
     }
   },
