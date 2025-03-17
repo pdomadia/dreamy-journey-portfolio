@@ -1,4 +1,3 @@
-
 import type { Config } from "tailwindcss";
 
 export default {
@@ -58,29 +57,23 @@ export default {
           foreground: 'hsl(var(--card-foreground))'
         },
         cream: '#F8F5F2',
-        sand: '#D4C8BE',
-        stone: '#4A5043',  // Darker, more accessible green-gray for text
+        sand: '#EBE6E0',
+        stone: '#31433A',
         sage: {
-          light: '#E6EFE9',
-          DEFAULT: '#BED3C2',
-          dark: '#8CAB92',
+          light: '#E0E5DD',
+          DEFAULT: '#BBC8B5',
+          dark: '#7A8D76',
         },
-        mint: {
-          light: '#D6F5E0',
-          DEFAULT: '#A7E1B8',
-          dark: '#65C87F',
+        hunter: {
+          light: '#3C5148',
+          DEFAULT: '#2D3F37',
+          dark: '#1E2B24',
         },
-        emerald: {
-          light: '#DAFCE4',
-          DEFAULT: '#38B261',
-          dark: '#106334',
-        },
-        terracotta: '#D4A79A',
-        charcoal: '#3A4538',  // Dark sage-green instead of purple
+        charcoal: '#2C3A31',
         earthy: {
-          light: '#F5F7F2',
-          DEFAULT: '#E8EFE3',
-          dark: '#D0DBBC',
+          light: '#F7F5F0',
+          DEFAULT: '#EDE9E4',
+          dark: '#D4CDC3',
         },
       },
       borderRadius: {

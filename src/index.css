@@ -7,33 +7,33 @@
 
 @layer base {
   :root {
-    --background: 43 30% 94%;
-    --foreground: 220 14% 22%;
+    --background: 40 25% 96%;
+    --foreground: 150 18% 20%;
 
-    --card: 43 30% 94%;
-    --card-foreground: 220 14% 22%;
+    --card: 40 25% 96%;
+    --card-foreground: 150 18% 20%;
 
-    --popover: 43 30% 94%;
-    --popover-foreground: 220 14% 22%;
+    --popover: 40 25% 96%;
+    --popover-foreground: 150 18% 20%;
 
-    --primary: 220 14% 22%;
-    --primary-foreground: 43 30% 94%;
+    --primary: 150 18% 20%;
+    --primary-foreground: 40 25% 96%;
 
-    --secondary: 90 12% 83%;
-    --secondary-foreground: 220 14% 22%;
+    --secondary: 100 10% 86%;
+    --secondary-foreground: 150 18% 20%;
 
-    --muted: 90 12% 83%;
-    --muted-foreground: 220 14% 22%;
+    --muted: 100 10% 86%;
+    --muted-foreground: 150 18% 20%;
 
-    --accent: 30 20% 72%;
-    --accent-foreground: 220 14% 22%;
+    --accent: 120 8% 75%;
+    --accent-foreground: 150 18% 20%;
 
     --destructive: 0 84.2% 60.2%;
     --destructive-foreground: 210 40% 98%;
 
-    --border: 90 12% 83%;
-    --input: 90 12% 83%;
-    --ring: 220 14% 22%;
+    --border: 100 10% 86%;
+    --input: 100 10% 86%;
+    --ring: 150 18% 20%;
 
     --radius: 0.5rem;
   }
@@ -47,8 +47,8 @@
   }
   
   body {
-    @apply bg-earthy-light text-charcoal;
-    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='4' height='4' viewBox='0 0 4 4'%3E%3Cpath fill='%2365C87F' fill-opacity='0.1' d='M1 3h1v1H1V3zm2-2h1v1H3V1z'%3E%3C/path%3E%3C/svg%3E");
+    @apply bg-earthy-light text-stone;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='4' height='4' viewBox='0 0 4 4'%3E%3Cpath fill='%237A8D76' fill-opacity='0.1' d='M1 3h1v1H1V3zm2-2h1v1H3V1z'%3E%3C/path%3E%3C/svg%3E");
   }
 }
 
@@ -57,7 +57,7 @@
     @apply text-3xl md:text-4xl font-serif font-medium mb-6 relative inline-block;
     &::after {
       content: "";
-      @apply absolute bottom-0 left-0 w-full h-[2px] bg-emerald-600 transform scale-x-0 origin-left transition-transform duration-300;
+      @apply absolute bottom-0 left-0 w-full h-[2px] bg-hunter-DEFAULT transform scale-x-0 origin-left transition-transform duration-300;
     }
     &:hover::after {
       @apply scale-x-100;
@@ -65,7 +65,7 @@
   }
   
   .section-subtitle {
-    @apply text-lg md:text-xl font-medium text-stone mb-8 max-w-2xl;
+    @apply text-lg md:text-xl font-medium text-stone/80 mb-8 max-w-2xl;
   }
   
   .container-custom {
@@ -76,7 +76,7 @@
     @apply relative inline-block;
     &::after {
       content: "";
-      @apply absolute bottom-0 left-0 w-full h-[1px] bg-emerald-600 transform scale-x-0 origin-left transition-transform duration-300;
+      @apply absolute bottom-0 left-0 w-full h-[1px] bg-hunter-DEFAULT transform scale-x-0 origin-left transition-transform duration-300;
     }
     &:hover::after {
       @apply scale-x-100;
@@ -84,10 +84,10 @@
   }
   
   .nav-link {
-    @apply relative px-2 py-1 text-charcoal transition-colors duration-300 hover:text-emerald-700;
+    @apply relative px-2 py-1 text-stone transition-colors duration-300 hover:text-hunter-light;
     &::after {
       content: "";
-      @apply absolute bottom-0 left-0 w-full h-[1px] bg-emerald-600 transform scale-x-0 origin-center transition-transform duration-300;
+      @apply absolute bottom-0 left-0 w-full h-[1px] bg-hunter-DEFAULT transform scale-x-0 origin-center transition-transform duration-300;
     }
     &:hover::after {
       @apply scale-x-100;
