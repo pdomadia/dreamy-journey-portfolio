@@ -70,12 +70,14 @@ const Hero: React.FC = () => {
           <div className="overflow-hidden animate-fade-in" style={{ animationDelay: '1s' }}>
             <a
               href="#about"
-              className="group inline-flex items-center gap-2 bg-hunter-DEFAULT text-white px-6 py-3 rounded-md hover:bg-hunter-light transition-all duration-300 hover:gap-3"
+              className="group"
               onMouseEnter={() => setIsHovering(true)}
               onMouseLeave={() => setIsHovering(false)}
             >
-              Explore my journey
-              <ArrowDown size={18} className={`transition-transform ${isHovering ? 'translate-y-1' : ''}`} />
+              <span className="inline-block text-sm md:text-base font-medium text-hunter-light bg-sage-light px-3 py-1 rounded-full">
+                Explore my journey
+                <ArrowDown size={16} className={`ml-1 inline transition-transform ${isHovering ? 'translate-y-1' : ''}`} />
+              </span>
             </a>
           </div>
         </div>
