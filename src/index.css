@@ -57,7 +57,7 @@
     @apply text-3xl md:text-4xl font-serif font-medium mb-6 relative inline-block;
     &::after {
       content: "";
-      @apply absolute bottom-0 left-0 w-full h-[2px] bg-hunter-DEFAULT transform scale-x-0 origin-left transition-transform duration-300;
+      @apply absolute bottom-0 left-0 w-full h-[2px] bg-stone transform scale-x-0 origin-left transition-transform duration-300;
     }
     &:hover::after {
       @apply scale-x-100;
@@ -76,7 +76,7 @@
     @apply relative inline-block;
     &::after {
       content: "";
-      @apply absolute bottom-0 left-0 w-full h-[1px] bg-hunter-DEFAULT transform scale-x-0 origin-left transition-transform duration-300;
+      @apply absolute bottom-0 left-0 w-full h-[1px] bg-stone transform scale-x-0 origin-left transition-transform duration-300;
     }
     &:hover::after {
       @apply scale-x-100;
@@ -84,10 +84,10 @@
   }
   
   .nav-link {
-    @apply relative px-2 py-1 text-stone transition-colors duration-300 hover:text-hunter-light;
+    @apply relative px-2 py-1 text-stone transition-colors duration-300 hover:text-sage-light;
     &::after {
       content: "";
-      @apply absolute bottom-0 left-0 w-full h-[1px] bg-hunter-DEFAULT transform scale-x-0 origin-center transition-transform duration-300;
+      @apply absolute bottom-0 left-0 w-full h-[1px] bg-stone transform scale-x-0 origin-center transition-transform duration-300;
     }
     &:hover::after {
       @apply scale-x-100;

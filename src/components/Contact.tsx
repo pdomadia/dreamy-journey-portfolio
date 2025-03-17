@@ -4,7 +4,7 @@ import { Mail, Linkedin, FileText } from 'lucide-react';
 
 const Contact: React.FC = () => {
   return (
-    <section id="contact" className="py-20 md:py-28 bg-hunter-dark text-earthy-light relative">
+    <section id="contact" className="py-20 md:py-28 bg-stone text-earthy-light relative">
       <div className="absolute inset-0 overflow-hidden -z-10">
         <div className="absolute top-0 left-0 w-full h-full bg-[radial-gradient(circle_at_30%_50%,rgba(122,141,118,0.2),transparent_60%)]"></div>
         <div className="absolute bottom-0 right-0 w-full h-full bg-[radial-gradient(circle_at_70%_80%,rgba(209,217,207,0.1),transparent_60%)]"></div>
