@@ -26,10 +26,25 @@ const Hero: React.FC = () => {
     <section className="min-h-screen flex flex-col justify-center relative overflow-hidden pt-20">
       <div className="absolute inset-0 -z-10">
         <div className="absolute top-0 left-0 w-full h-full bg-gradient-to-br from-earthy-light via-sage-light/30 to-cream/70"></div>
-        {/* Add decorative elements for a whimsical touch */}
-        <div className="absolute top-1/4 left-10 w-20 h-20 rounded-full bg-sage-light/40 animate-float"></div>
-        <div className="absolute bottom-1/3 right-10 w-12 h-12 rounded-full bg-sage-DEFAULT/30 animate-float" style={{ animationDelay: '1s' }}></div>
-        <div className="absolute top-2/3 left-1/4 w-16 h-16 rounded-full bg-sage-dark/20 animate-float" style={{ animationDelay: '2s' }}></div>
+        
+        {/* Replace floating bubbles with subtle geometric patterns */}
+        <svg className="absolute top-20 left-10 w-32 h-32 text-sage-dark/20" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M20,20 L80,20 L80,80 L20,80 Z" stroke="currentColor" strokeWidth="2" opacity="0.4">
+            <animate attributeName="opacity" values="0.4;0.1;0.4" dur="6s" repeatCount="indefinite" />
+          </path>
+        </svg>
+        
+        <svg className="absolute bottom-40 right-20 w-24 h-24 text-sage-dark/20" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <circle cx="50" cy="50" r="30" stroke="currentColor" strokeWidth="2" opacity="0.3">
+            <animate attributeName="opacity" values="0.3;0.1;0.3" dur="7s" repeatCount="indefinite" />
+          </circle>
+        </svg>
+        
+        <svg className="absolute top-1/2 right-1/4 w-20 h-20 text-hunter-light/20" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M20,50 L50,20 L80,50 L50,80 Z" stroke="currentColor" strokeWidth="2" opacity="0.25">
+            <animate attributeName="opacity" values="0.25;0.05;0.25" dur="8s" repeatCount="indefinite" />
+          </path>
+        </svg>
       </div>
       
       <div className="container mx-auto px-6 md:px-12 flex flex-col md:flex-row items-center">
@@ -55,7 +70,7 @@ const Hero: React.FC = () => {
           <div className="overflow-hidden animate-fade-in" style={{ animationDelay: '1s' }}>
             <a
               href="#about"
-              className="group inline-flex items-center gap-2 bg-hunter-DEFAULT text-white px-6 py-3 rounded-md hover:bg-hunter-light transition-all duration-300 hover:gap-3"
+              className="group inline-flex items-center gap-2 bg-hunter-DEFAULT text-earthy-light px-6 py-3 rounded-md hover:bg-hunter-light transition-all duration-300 hover:gap-3"
               onMouseEnter={() => setIsHovering(true)}
               onMouseLeave={() => setIsHovering(false)}
             >
