@@ -29,12 +29,9 @@ const CaseStudies: React.FC = () => {
 
   return (
     <section id="case-studies" className="py-20 md:py-28 relative">
-      {/* Background decorative element */}
-      <div className="absolute top-20 left-0 w-64 h-64 bg-terracotta/10 rounded-full blur-3xl -z-10" aria-hidden="true"></div>
-      
       <div className="container-custom">
         <div className="text-center mb-16 reveal">
-          <span className="inline-block text-sm md:text-base font-medium text-terracotta bg-terracotta/10 px-3 py-1 rounded-full mb-4">
+          <span className="inline-block text-sm md:text-base font-medium text-[#9A7AA0] bg-[#DDD1E9]/20 px-3 py-1 rounded-full mb-4">
             Featured Work
           </span>
           <h2 className="section-title mx-auto">Case Studies</h2>

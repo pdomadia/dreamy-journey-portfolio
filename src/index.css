@@ -7,32 +7,32 @@
 
 @layer base {
   :root {
-    --background: 36 33% 97%;
+    --background: 270 33% 97%;
     --foreground: 222 14% 22%;
 
-    --card: 36 33% 97%;
+    --card: 270 33% 97%;
     --card-foreground: 222 14% 22%;
 
-    --popover: 36 33% 97%;
+    --popover: 270 33% 97%;
     --popover-foreground: 222 14% 22%;
 
     --primary: 222 14% 22%;
-    --primary-foreground: 36 33% 97%;
+    --primary-foreground: 270 33% 97%;
 
-    --secondary: 33 17% 76%;
+    --secondary: 270 35% 87%;
     --secondary-foreground: 222 14% 22%;
 
-    --muted: 33 17% 76%;
+    --muted: 270 35% 87%;
     --muted-foreground: 222 14% 22%;
 
-    --accent: 134 9% 77%;
+    --accent: 282 28% 55%;
     --accent-foreground: 222 14% 22%;
 
     --destructive: 0 84.2% 60.2%;
     --destructive-foreground: 210 40% 98%;
 
-    --border: 33 17% 76%;
-    --input: 33 17% 76%;
+    --border: 270 35% 87%;
+    --input: 270 35% 87%;
     --ring: 222 14% 22%;
 
     --radius: 0.75rem;
@@ -48,7 +48,7 @@
   
   body {
     @apply bg-cream text-charcoal;
-    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='4' height='4' viewBox='0 0 4 4'%3E%3Cpath fill='%23a69b8d' fill-opacity='0.1' d='M1 3h1v1H1V3zm2-2h1v1H3V1z'%3E%3C/path%3E%3C/svg%3E");
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='4' height='4' viewBox='0 0 4 4'%3E%3Cpath fill='%239a7aa0' fill-opacity='0.1' d='M1 3h1v1H1V3zm2-2h1v1H3V1z'%3E%3C/path%3E%3C/svg%3E");
   }
 }
 
@@ -57,7 +57,7 @@
     @apply text-3xl md:text-4xl font-serif font-medium mb-6 relative inline-block;
     &::after {
       content: "";
-      @apply absolute bottom-0 left-0 w-full h-[2px] bg-terracotta transform scale-x-0 origin-left transition-transform duration-300;
+      @apply absolute bottom-0 left-0 w-full h-[2px] bg-[#9A7AA0] transform scale-x-0 origin-left transition-transform duration-300;
     }
     &:hover::after {
       @apply scale-x-100;
@@ -76,7 +76,7 @@
     @apply relative inline-block;
     &::after {
       content: "";
-      @apply absolute bottom-0 left-0 w-full h-[1px] bg-terracotta transform scale-x-0 origin-left transition-transform duration-300;
+      @apply absolute bottom-0 left-0 w-full h-[1px] bg-[#9A7AA0] transform scale-x-0 origin-left transition-transform duration-300;
     }
     &:hover::after {
       @apply scale-x-100;
@@ -84,10 +84,10 @@
   }
   
   .nav-link {
-    @apply relative px-2 py-1 text-charcoal transition-colors duration-300 hover:text-terracotta;
+    @apply relative px-2 py-1 text-charcoal transition-colors duration-300 hover:text-[#9A7AA0];
     &::after {
       content: "";
-      @apply absolute bottom-0 left-0 w-full h-[1px] bg-terracotta transform scale-x-0 origin-center transition-transform duration-300;
+      @apply absolute bottom-0 left-0 w-full h-[1px] bg-[#9A7AA0] transform scale-x-0 origin-center transition-transform duration-300;
     }
     &:hover::after {
       @apply scale-x-100;
