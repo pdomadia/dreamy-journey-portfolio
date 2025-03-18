@@ -1,8 +1,6 @@
-
 import React, { useState, useEffect } from 'react';
 import { ArrowDown, Sparkles } from 'lucide-react';
 import { Avatar, AvatarImage, AvatarFallback } from "@/components/ui/avatar";
-
 const Hero: React.FC = () => {
   const [isHovering, setIsHovering] = useState(false);
   const [rotation, setRotation] = useState(0);
@@ -26,7 +24,6 @@ const Hero: React.FC = () => {
       window.removeEventListener('mousemove', handleMouseMove);
     };
   }, []);
-  
   return <section className="min-h-screen flex flex-col justify-center relative overflow-hidden pt-20">
       <div className="absolute inset-0 -z-10">
         <div className="absolute top-0 left-0 w-full h-full bg-gradient-to-br from-earthy-light via-sage-light/30 to-cream/70"></div>
@@ -54,23 +51,19 @@ const Hero: React.FC = () => {
       <div className="container mx-auto px-6 md:px-12 flex flex-col md:flex-row items-center">
         <div className="md:w-2/3 flex flex-col items-start">
           <div className="overflow-hidden mb-2">
-            <span className="inline-block text-sm md:text-base font-medium text-hunter-light bg-sage-light px-3 py-1 rounded-full animate-fade-in">
-              Hello, I'm...
-            </span>
+            <span className="inline-block text-sm md:text-base font-medium text-hunter-light bg-sage-light px-3 py-1 rounded-full animate-fade-in">Welcome, I'm...</span>
           </div>
           
           <div className="overflow-hidden">
             <h1 className="text-4xl md:text-6xl lg:text-7xl font-serif font-medium mb-4 animate-text-reveal" style={{
             animationDelay: '0.3s'
-          }}>Priti Domadia</h1>
+          }}>Priti</h1>
           </div>
           
           <div className="overflow-hidden max-w-2xl">
             <p className="text-xl md:text-2xl text-stone/80 font-light mb-8 animate-text-reveal" style={{
             animationDelay: '0.6s'
-          }}>
-              Weaving together healthcare expertise and design thinking to create technologies that truly serve human needs.
-            </p>
+          }}>I see tech through an OT lens – making it simple and accessible. Dive into my projects and see how I'm building tools that truly help.</p>
           </div>
           
           <div className="overflow-hidden animate-fade-in" style={{
@@ -91,11 +84,7 @@ const Hero: React.FC = () => {
           transition: 'transform 0.3s ease-out'
         }}>
             <Avatar className="w-64 h-64 md:w-80 md:h-80 relative rounded-full overflow-hidden shadow-lg hover:shadow-xl transition-all duration-500 transform group-hover:scale-105">
-              <AvatarImage 
-                src="/lovable-uploads/e869e172-fe18-48bd-a549-1e51ac024a50.png" 
-                alt="Priti Domadia" 
-                className="object-cover"
-              />
+              <AvatarImage src="/lovable-uploads/e869e172-fe18-48bd-a549-1e51ac024a50.png" alt="Priti Domadia" className="object-cover" />
               <AvatarFallback className="bg-sage-light text-hunter-DEFAULT text-3xl">PD</AvatarFallback>
             </Avatar>
             <div className="absolute top-0 left-0 w-full h-full flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
@@ -110,5 +99,4 @@ const Hero: React.FC = () => {
       </div>
     </section>;
 };
-
 export default Hero;
