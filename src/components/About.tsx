@@ -1,10 +1,7 @@
-
 import React from 'react';
 import { Sparkles, Leaf, Coffee } from 'lucide-react';
-
 const About: React.FC = () => {
-  return (
-    <section id="about" className="py-20 md:py-28 relative bg-gradient-to-b from-earthy-DEFAULT to-earthy-light">
+  return <section id="about" className="py-20 md:py-28 relative bg-gradient-to-b from-earthy-DEFAULT to-earthy-light">
       <div className="absolute inset-0 overflow-hidden -z-10">
         <div className="absolute top-0 left-0 w-full h-full bg-[radial-gradient(circle_at_30%_30%,#E0E5DD,transparent_70%)]"></div>
         <div className="absolute bottom-0 right-0 w-full h-full bg-[radial-gradient(circle_at_70%_80%,#D4CDC3,transparent_70%)]"></div>
@@ -24,19 +21,8 @@ const About: React.FC = () => {
             </div>
             
             <div className="space-y-6 reveal reveal-delay-1">
-              <p className="text-stone/90 leading-relaxed">
-                With a background spanning pediatric occupational therapy and health tech, 
-                I bring a unique perspective that combines clinical expertise with product 
-                design sensibilities. My journey has taken me from hands-on healthcare to 
-                digital innovation, always with the goal of creating solutions that truly 
-                understand and serve human needs.
-              </p>
-              <p className="text-stone/90 leading-relaxed">
-                I'm passionate about designing experiences that are not only accessible and
-                intuitive but also bring joy and simplicity to complex processes. My multicultural
-                background has shaped my approach to problem-solving, allowing me to view
-                challenges from diverse perspectives.
-              </p>
+              <p className="text-stone/90 leading-relaxed">Hi, I'm Priti! I'm a Product Designer and Accessibility Advocate in NYC, and I'm super passionate about making tech work for everyone. My background in pediatric OT really drives that. I've gone from hands-on healthcare to digital innovation, always focused on creating solutions that really meet human needs. I aim to design experiences that are accessible, intuitive, and even bring a little joy. When I'm not designing, I love exploring new places, finding my zen with yoga, and experimenting in the kitchen. Let's connect if you're into accessible design, travel, or food!</p>
+              <p className="text-stone/90 leading-relaxed"></p>
             </div>
           </div>
           
@@ -72,8 +58,6 @@ const About: React.FC = () => {
           </div>
         </div>
       </div>
-    </section>
-  );
+    </section>;
 };
-
 export default About;
