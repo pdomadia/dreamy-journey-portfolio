@@ -22,10 +22,10 @@ const About: React.FC = () => {
             </div>
             
             <div className="space-y-6 reveal reveal-delay-1">
-              <p className="text-stone/90 leading-relaxed">I'm a Product Designer and Accessibility Advocate, living in NYC, and I'm super passionate about making tech work for everyone. My background in pediatric OT really drives that. I've gone from hands-on healthcare to digital innovation, always focused on creating solutions that really meet human needs. I aim to design experiences that are accessible, intuitive, and even bring a little joy. 
+              <p className="text-stone/90 leading-relaxed">I'm a Product Designer and Accessibility Advocate, living in NYC, and I'm super passionate about making tech work for everyone. My background in pediatric OT really drives that. I've gone from hands-on healthcare to digital innovation, always focused on creating solutions that really meet human needs. I aim to design experiences that are accessible, intuitive, and even bring a little joy.  
 
 
-When I'm not designing, I love exploring new places, finding my zen with new workouts, and experimenting in the kitchen. 
+When I'm not designing, I love exploring new places, finding my zen with new workouts, and experimenting in the kitchen.  
 
 
 Let's connect if you're into accessible design, travel, or food!</p>
