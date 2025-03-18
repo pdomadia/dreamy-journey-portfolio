@@ -81,27 +81,98 @@ const CaseStudyPage: React.FC = () => {
           </div>
 
           <div className="prose prose-lg max-w-none">
-            <p className="text-xl text-charcoal/80 leading-relaxed mb-6">
-              {caseStudy.description}
-            </p>
-            
-            <h2 className="text-2xl font-medium mt-10 mb-4">Challenge</h2>
-            <p>
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros elementum tristique. 
-              Duis cursus, mi quis viverra ornare, eros dolor interdum nulla, ut commodo diam libero vitae erat.
-            </p>
-            
-            <h2 className="text-2xl font-medium mt-10 mb-4">Solution</h2>
-            <p>
-              Aenean faucibus nibh et justo cursus id rutrum lorem imperdiet. Nunc ut sem vitae risus tristique posuere.
-              Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Donec velit neque, auctor sit amet aliquam vel.
-            </p>
-            
-            <h2 className="text-2xl font-medium mt-10 mb-4">Results</h2>
-            <p>
-              Maecenas sed diam eget risus varius blandit sit amet non magna. Nullam quis risus eget urna mollis ornare vel eu leo.
-              Cras mattis consectetur purus sit amet fermentum. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh.
-            </p>
+            {caseStudy.fullContent ? (
+              <>
+                <h2 className="text-2xl font-medium mt-10 mb-4">Introduction: The Daily Challenge</h2>
+                <p className="text-xl text-charcoal/80 leading-relaxed mb-6">
+                  {caseStudy.fullContent.introduction}
+                </p>
+
+                <div className="bg-earthy-DEFAULT/20 p-6 rounded-lg my-8">
+                  <h3 className="text-xl font-medium mb-2">Project Overview</h3>
+                  <p>
+                    <strong>Objective:</strong> To overhaul the inefficient scheduling system used in multiple oncology clinics, 
+                    ensuring that appointments align perfectly with the clinic's immediate informational needs, enhancing both 
+                    operational efficiency and patient care quality.
+                  </p>
+                </div>
+                
+                <h2 className="text-2xl font-medium mt-10 mb-4">The Challenge</h2>
+                <p>
+                  {caseStudy.fullContent.challenge}
+                </p>
+                
+                <div className="bg-forest-light/30 p-4 rounded-lg my-6 text-center">
+                  <p className="font-medium">
+                    "Over 25% of appointments were ineffective, failing to deliver necessary treatment updates."
+                  </p>
+                </div>
+                
+                <h2 className="text-2xl font-medium mt-10 mb-4">Research Insights</h2>
+                <p className="font-medium mb-3">Methodologies Employed:</p>
+                <ul className="mb-6">
+                  {caseStudy.fullContent.research?.methodologies?.map((methodology, index) => (
+                    <li key={index} className="mb-2">{methodology}</li>
+                  ))}
+                </ul>
+                
+                <p className="font-medium mb-3">Key Insights:</p>
+                <ul className="mb-6">
+                  {caseStudy.fullContent.research?.insights?.map((insight, index) => (
+                    <li key={index} className="mb-2">{insight}</li>
+                  ))}
+                </ul>
+                
+                <h2 className="text-2xl font-medium mt-10 mb-4">Solution Implementation</h2>
+                <p>
+                  {caseStudy.fullContent.solution}
+                </p>
+                
+                <h2 className="text-2xl font-medium mt-10 mb-4">Impact and Reflections</h2>
+                <p>
+                  {caseStudy.fullContent.impact}
+                </p>
+                
+                <h2 className="text-2xl font-medium mt-10 mb-4">Conclusion</h2>
+                <p>
+                  {caseStudy.fullContent.conclusion}
+                </p>
+                
+                <div className="bg-forest-DEFAULT/20 p-6 rounded-lg my-8 text-center">
+                  <h3 className="text-xl font-medium mb-4">Call to Action</h3>
+                  <p className="mb-4">
+                    {caseStudy.fullContent.callToAction}
+                  </p>
+                  <Button asChild className="mt-2">
+                    <Link to="/#contact">Contact Us</Link>
+                  </Button>
+                </div>
+              </>
+            ) : (
+              <>
+                <p className="text-xl text-charcoal/80 leading-relaxed mb-6">
+                  {caseStudy.description}
+                </p>
+                
+                <h2 className="text-2xl font-medium mt-10 mb-4">Challenge</h2>
+                <p>
+                  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros elementum tristique. 
+                  Duis cursus, mi quis viverra ornare, eros dolor interdum nulla, ut commodo diam libero vitae erat.
+                </p>
+                
+                <h2 className="text-2xl font-medium mt-10 mb-4">Solution</h2>
+                <p>
+                  Aenean faucibus nibh et justo cursus id rutrum lorem imperdiet. Nunc ut sem vitae risus tristique posuere.
+                  Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Donec velit neque, auctor sit amet aliquam vel.
+                </p>
+                
+                <h2 className="text-2xl font-medium mt-10 mb-4">Results</h2>
+                <p>
+                  Maecenas sed diam eget risus varius blandit sit amet non magna. Nullam quis risus eget urna mollis ornare vel eu leo.
+                  Cras mattis consectetur purus sit amet fermentum. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh.
+                </p>
+              </>
+            )}
           </div>
         </div>
       </div>
