@@ -1,4 +1,3 @@
-
 import React from 'react';
 import { Sparkles, Leaf, Coffee, Linkedin, Mail, FileText } from 'lucide-react';
 import { Button } from "@/components/ui/button";
@@ -51,7 +50,11 @@ const About: React.FC = () => {
                 <span>Email</span>
               </Button>
               
-              <Button variant="outline" className="bg-white/80 border-sage-dark hover:bg-sage-light/50 hover:text-hunter-DEFAULT flex items-center gap-2">
+              <Button 
+                variant="outline" 
+                className="bg-white/80 border-sage-dark hover:bg-sage-light/50 hover:text-hunter-DEFAULT flex items-center gap-2"
+                onClick={() => window.open('https://drive.google.com/uc?export=download&id=YOUR_FILE_ID', '_blank')}
+              >
                 <FileText size={18} />
                 <span>Resume</span>
               </Button>
