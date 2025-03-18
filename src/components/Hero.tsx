@@ -90,7 +90,7 @@ const Hero: React.FC = () => {
           transform: `rotate(${position.x / 20}deg) translateX(${position.x}px) translateY(${position.y}px)`,
           transition: 'transform 0.3s ease-out'
         }}>
-            <Avatar className="w-56 h-56 relative rounded-full overflow-hidden shadow-lg hover:shadow-xl transition-all duration-500 transform group-hover:scale-105">
+            <Avatar className="w-64 h-64 md:w-80 md:h-80 relative rounded-full overflow-hidden shadow-lg hover:shadow-xl transition-all duration-500 transform group-hover:scale-105">
               <AvatarImage src="/lovable-uploads/e869e172-fe18-48bd-a549-1e51ac024a50.png" alt="Priti Domadia" />
               <AvatarFallback className="bg-sage-light text-hunter-DEFAULT text-3xl">PD</AvatarFallback>
             </Avatar>
