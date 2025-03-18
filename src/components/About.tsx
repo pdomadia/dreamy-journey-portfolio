@@ -33,7 +33,11 @@ const About: React.FC = () => {
             </div>
             
             <div className="flex flex-wrap gap-3 mt-8 reveal reveal-delay-2">
-              <Button variant="outline" className="bg-white/80 border-sage-dark hover:bg-sage-light/50 hover:text-hunter-DEFAULT flex items-center gap-2">
+              <Button 
+                variant="outline" 
+                className="bg-white/80 border-sage-dark hover:bg-sage-light/50 hover:text-hunter-DEFAULT flex items-center gap-2"
+                onClick={() => window.open('https://www.linkedin.com/in/pritidomadia/', '_blank')}
+              >
                 <Linkedin size={18} />
                 <span>LinkedIn</span>
               </Button>
