@@ -3,7 +3,7 @@ import React from 'react';
 import { useParams, Link } from 'react-router-dom';
 import Layout from '@/components/Layout';
 import { Button } from '@/components/ui/button';
-import { ArrowLeft } from 'lucide-react';
+import { ArrowLeft, ChartBar, PieChart } from 'lucide-react';
 import { 
   Breadcrumb,
   BreadcrumbItem,
@@ -13,6 +13,34 @@ import {
   BreadcrumbSeparator,
 } from '@/components/ui/breadcrumb';
 import { caseStudies } from '@/data/caseStudies';
+import { AspectRatio } from '@/components/ui/aspect-ratio';
+import {
+  BarChart,
+  Bar,
+  XAxis,
+  YAxis,
+  CartesianGrid,
+  Tooltip,
+  ResponsiveContainer,
+  Legend
+} from 'recharts';
+import { ChartContainer, ChartTooltip, ChartTooltipContent } from '@/components/ui/chart';
+
+const adminBurdenData = [
+  { name: 'Before', administrative: 100, relevance: 75 },
+  { name: 'After', administrative: 70, relevance: 95 }
+];
+
+const chartConfig = {
+  administrative: {
+    label: "Administrative Burden",
+    color: "#ef4444"
+  },
+  relevance: {
+    label: "Meeting Relevance",
+    color: "#22c55e"
+  }
+};
 
 const CaseStudyPage: React.FC = () => {
   const { id } = useParams<{ id: string }>();
@@ -49,7 +77,7 @@ const CaseStudyPage: React.FC = () => {
             </BreadcrumbItem>
             <BreadcrumbSeparator />
             <BreadcrumbItem>
-              <BreadcrumbPage>{caseStudy.title}</BreadcrumbPage>
+              <BreadcrumbPage>{caseStudy?.title}</BreadcrumbPage>
             </BreadcrumbItem>
           </BreadcrumbList>
         </Breadcrumb>
@@ -65,28 +93,42 @@ const CaseStudyPage: React.FC = () => {
 
         <div className="max-w-4xl mx-auto">
           <span className="inline-block text-sm md:text-base font-medium text-forest-dark bg-forest-light/40 px-3 py-1 rounded-full mb-4">
-            {caseStudy.subtitle}
+            {caseStudy?.subtitle}
           </span>
           
           <h1 className="text-3xl md:text-4xl lg:text-5xl font-serif font-medium mb-6">
-            {caseStudy.title}
+            {caseStudy?.title}
           </h1>
 
           <div className="aspect-video w-full mb-10 rounded-lg overflow-hidden">
             <img 
-              src={caseStudy.imageUrl} 
-              alt={caseStudy.title} 
+              src={caseStudy?.imageUrl} 
+              alt={caseStudy?.title} 
               className="w-full h-full object-cover"
             />
           </div>
 
           <div className="prose prose-lg max-w-none">
-            {caseStudy.fullContent ? (
+            {caseStudy?.fullContent ? (
               <>
                 <h2 className="text-2xl font-medium mt-10 mb-4">Introduction: The Daily Challenge</h2>
                 <p className="text-xl text-charcoal/80 leading-relaxed mb-6">
                   {caseStudy.fullContent.introduction}
                 </p>
+
+                {/* Visual: Sarah at her desk */}
+                <div className="my-8 rounded-lg overflow-hidden border border-gray-200">
+                  <AspectRatio ratio={16/9}>
+                    <img 
+                      src="https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" 
+                      alt="Sarah Johnson reviewing digital schedule" 
+                      className="object-cover w-full h-full"
+                    />
+                  </AspectRatio>
+                  <div className="bg-gray-50 p-3 text-sm text-gray-600 italic">
+                    Sarah Johnson, office manager, reviewing the daily appointment schedule
+                  </div>
+                </div>
 
                 <div className="bg-earthy-DEFAULT/20 p-6 rounded-lg my-8">
                   <h3 className="text-xl font-medium mb-2">Project Overview</h3>
@@ -97,13 +139,36 @@ const CaseStudyPage: React.FC = () => {
                   </p>
                 </div>
                 
+                {/* Visual: Infographic showing old system challenges */}
+                <div className="bg-gray-50 p-6 rounded-lg my-8">
+                  <h3 className="text-xl font-medium mb-4 flex items-center gap-2">
+                    <ChartBar className="text-forest-dark" size={24} />
+                    Key Challenges with Old System
+                  </h3>
+                  <div className="grid md:grid-cols-3 gap-4 text-center">
+                    <div className="bg-white p-4 rounded-lg shadow-sm">
+                      <div className="text-red-500 text-2xl font-bold mb-2">68%</div>
+                      <p className="text-gray-700">Mismatched expertise between clinic needs and pharmaceutical representatives</p>
+                    </div>
+                    <div className="bg-white p-4 rounded-lg shadow-sm">
+                      <div className="text-red-500 text-2xl font-bold mb-2">12.5 hrs</div>
+                      <p className="text-gray-700">Average weekly time spent on scheduling logistics</p>
+                    </div>
+                    <div className="bg-white p-4 rounded-lg shadow-sm">
+                      <div className="text-red-500 text-2xl font-bold mb-2">42%</div>
+                      <p className="text-gray-700">Staff reported missing critical information due to scheduling issues</p>
+                    </div>
+                  </div>
+                </div>
+                
                 <h2 className="text-2xl font-medium mt-10 mb-4">The Challenge</h2>
                 <p>
                   {caseStudy.fullContent.challenge}
                 </p>
                 
-                <div className="bg-forest-light/30 p-4 rounded-lg my-6 text-center">
-                  <p className="font-medium">
+                {/* Visual: Highlighted Box */}
+                <div className="bg-forest-light/30 p-4 rounded-lg my-6 text-center border-l-4 border-forest-DEFAULT">
+                  <p className="font-medium text-lg">
                     "Over 25% of appointments were ineffective, failing to deliver necessary treatment updates."
                   </p>
                 </div>
@@ -129,9 +194,35 @@ const CaseStudyPage: React.FC = () => {
                 </p>
                 
                 <h2 className="text-2xl font-medium mt-10 mb-4">Impact and Reflections</h2>
-                <p>
+                <p className="mb-6">
                   {caseStudy.fullContent.impact}
                 </p>
+
+                {/* Visual: Dynamic Graph */}
+                <div className="bg-white p-6 rounded-lg shadow-md my-8 border border-gray-100">
+                  <h3 className="text-xl font-medium mb-4 flex items-center gap-2">
+                    <PieChart className="text-forest-dark" size={24} />
+                    Results After Implementation
+                  </h3>
+                  <div className="h-72 w-full">
+                    <ChartContainer config={chartConfig}>
+                      <BarChart data={adminBurdenData} margin={{ top: 20, right: 30, left: 20, bottom: 5 }}>
+                        <CartesianGrid strokeDasharray="3 3" />
+                        <XAxis dataKey="name" />
+                        <YAxis />
+                        <ChartTooltip 
+                          content={<ChartTooltipContent />}
+                        />
+                        <Legend />
+                        <Bar dataKey="administrative" name="Administrative Burden (%)" fill="var(--color-administrative)" />
+                        <Bar dataKey="relevance" name="Meeting Relevance (%)" fill="var(--color-relevance)" />
+                      </BarChart>
+                    </ChartContainer>
+                  </div>
+                  <p className="text-sm text-gray-600 mt-2 italic text-center">
+                    Administrative burden decreased by 30% while meeting relevance improved by 20%
+                  </p>
+                </div>
                 
                 <h2 className="text-2xl font-medium mt-10 mb-4">Conclusion</h2>
                 <p>
