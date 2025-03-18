@@ -91,7 +91,11 @@ const Hero: React.FC = () => {
           transition: 'transform 0.3s ease-out'
         }}>
             <Avatar className="w-64 h-64 md:w-80 md:h-80 relative rounded-full overflow-hidden shadow-lg hover:shadow-xl transition-all duration-500 transform group-hover:scale-105">
-              <AvatarImage src="/lovable-uploads/e869e172-fe18-48bd-a549-1e51ac024a50.png" alt="Priti Domadia" />
+              <AvatarImage 
+                src="/lovable-uploads/e869e172-fe18-48bd-a549-1e51ac024a50.png" 
+                alt="Priti Domadia" 
+                className="object-cover"
+              />
               <AvatarFallback className="bg-sage-light text-hunter-DEFAULT text-3xl">PD</AvatarFallback>
             </Avatar>
             <div className="absolute top-0 left-0 w-full h-full flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
