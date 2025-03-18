@@ -1,6 +1,8 @@
+
 import React from 'react';
 import { Sparkles, Leaf, Coffee, Linkedin, Mail, FileText } from 'lucide-react';
 import { Button } from "@/components/ui/button";
+
 const About: React.FC = () => {
   return <section id="about" className="py-20 md:py-28 relative bg-gradient-to-b from-earthy-DEFAULT to-earthy-light">
       <div className="absolute inset-0 overflow-hidden -z-10">
@@ -22,13 +24,11 @@ const About: React.FC = () => {
             </div>
             
             <div className="space-y-6 reveal reveal-delay-1">
-              <p className="text-stone/90 leading-relaxed">I'm a Product Designer and Accessibility Advocate, living in NYC, and I'm super passionate about making tech work for everyone. My background in pediatric OT really drives that. I've gone from hands-on healthcare to digital innovation, always focused on creating solutions that really meet human needs. I aim to design experiences that are accessible, intuitive, and even bring a little joy.  
-
-
-When I'm not designing, I love exploring new places, finding my zen with new workouts, and experimenting in the kitchen.  
-
-
-Let's connect if you're into accessible design, travel, or food!</p>
+              <p className="text-stone/90 leading-relaxed">I'm a Product Designer and Accessibility Advocate, living in NYC, and I'm super passionate about making tech work for everyone. My background in pediatric OT really drives that. I've gone from hands-on healthcare to digital innovation, always focused on creating solutions that really meet human needs. I aim to design experiences that are accessible, intuitive, and even bring a little joy.
+              <br /><br />
+              When I'm not designing, I love exploring new places, finding my zen with new workouts, and experimenting in the kitchen.
+              <br /><br />
+              Let's connect if you're into accessible design, travel, or food!</p>
               <p className="text-stone/90 leading-relaxed"></p>
             </div>
             
@@ -53,15 +53,6 @@ Let's connect if you're into accessible design, travel, or food!</p>
           <div className="md:w-1/2 flex flex-col justify-center">
             <div className="space-y-8">
               <div className="bg-white/70 backdrop-blur-sm rounded-xl p-6 shadow-sm border border-sage-dark/10 hover:border-sage-dark/20 transition-all duration-300 reveal card-hover">
-                <Leaf size={24} className="text-hunter-DEFAULT mb-3" />
-                <h3 className="text-xl font-medium mb-2">Multicultural Perspective</h3>
-                <p className="text-stone/80">
-                  My international background enriches my approach to design, allowing me to consider 
-                  diverse user needs and cultural contexts.
-                </p>
-              </div>
-              
-              <div className="bg-white/70 backdrop-blur-sm rounded-xl p-6 shadow-sm border border-sage-dark/10 hover:border-sage-dark/20 transition-all duration-300 reveal reveal-delay-2 card-hover">
                 <Coffee size={24} className="text-hunter-DEFAULT mb-3" />
                 <h3 className="text-xl font-medium mb-2">Healthcare Foundation</h3>
                 <p className="text-stone/80">
@@ -70,12 +61,20 @@ Let's connect if you're into accessible design, travel, or food!</p>
                 </p>
               </div>
               
-              <div className="bg-white/70 backdrop-blur-sm rounded-xl p-6 shadow-sm border border-sage-dark/10 hover:border-sage-dark/20 transition-all duration-300 reveal reveal-delay-3 card-hover">
+              <div className="bg-white/70 backdrop-blur-sm rounded-xl p-6 shadow-sm border border-sage-dark/10 hover:border-sage-dark/20 transition-all duration-300 reveal reveal-delay-2 card-hover">
                 <Sparkles size={24} className="text-hunter-DEFAULT mb-3" />
                 <h3 className="text-xl font-medium mb-2">Tech Explorer</h3>
                 <p className="text-stone/80">
                   Four years in health tech spanning product design, UX research, customer success, and sales
                   has equipped me with a holistic understanding of the product lifecycle.
+                </p>
+              </div>
+              
+              <div className="bg-white/70 backdrop-blur-sm rounded-xl p-6 shadow-sm border border-sage-dark/10 hover:border-sage-dark/20 transition-all duration-300 reveal reveal-delay-3 card-hover">
+                <Leaf size={24} className="text-hunter-DEFAULT mb-3" />
+                <h3 className="text-xl font-medium mb-2">Designing with Empathy</h3>
+                <p className="text-stone/80">
+                  Every design tells a story. My background in occupational therapy and UX research has shaped my ability to uncover hidden narratives, ensuring the voices behind the data are heard. I bring empathy and depth to the user experience.
                 </p>
               </div>
             </div>
@@ -84,4 +83,5 @@ Let's connect if you're into accessible design, travel, or food!</p>
       </div>
     </section>;
 };
+
 export default About;
