@@ -42,7 +42,11 @@ const About: React.FC = () => {
                 <span>LinkedIn</span>
               </Button>
               
-              <Button variant="outline" className="bg-white/80 border-sage-dark hover:bg-sage-light/50 hover:text-hunter-DEFAULT flex items-center gap-2">
+              <Button 
+                variant="outline" 
+                className="bg-white/80 border-sage-dark hover:bg-sage-light/50 hover:text-hunter-DEFAULT flex items-center gap-2"
+                onClick={() => window.open('mailto:pdomadia@gmail.com', '_blank')}
+              >
                 <Mail size={18} />
                 <span>Email</span>
               </Button>
