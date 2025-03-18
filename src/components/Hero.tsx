@@ -1,3 +1,4 @@
+
 import React, { useState, useEffect } from 'react';
 import { ArrowDown, Sparkles } from 'lucide-react';
 import { Avatar, AvatarImage, AvatarFallback } from "@/components/ui/avatar";
@@ -51,13 +52,13 @@ const Hero: React.FC = () => {
       <div className="container mx-auto px-6 md:px-12 flex flex-col md:flex-row items-center">
         <div className="md:w-2/3 flex flex-col items-start">
           <div className="overflow-hidden mb-2">
-            <span className="inline-block text-sm md:text-base font-medium text-hunter-light bg-sage-light px-3 py-1 rounded-full animate-fade-in">Welcome, I'm...</span>
+            <span className="inline-block text-sm md:text-base font-medium text-hunter-light bg-sage-light px-3 py-1 rounded-full animate-fade-in">Welcome! I'm...</span>
           </div>
           
           <div className="overflow-hidden">
             <h1 className="text-4xl md:text-6xl lg:text-7xl font-serif font-medium mb-4 animate-text-reveal" style={{
             animationDelay: '0.3s'
-          }}>Priti</h1>
+          }}>Priti Domadia</h1>
           </div>
           
           <div className="overflow-hidden max-w-2xl">
