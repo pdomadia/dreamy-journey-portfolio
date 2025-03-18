@@ -10,7 +10,7 @@ const Contact: React.FC = () => {
         <div className="absolute bottom-0 right-0 w-full h-full bg-[radial-gradient(circle_at_70%_80%,rgba(209,217,207,0.1),transparent_60%)]"></div>
       </div>
       
-      <div className="container-custom">
+      <div className="container mx-auto px-4 md:px-6">
         <div className="max-w-4xl mx-auto text-center reveal">
           <span className="inline-block text-sm md:text-base font-medium text-sage-light bg-sage-light/20 px-3 py-1 rounded-full mb-4">
             Let's Connect
