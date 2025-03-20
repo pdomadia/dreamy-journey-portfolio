@@ -8,6 +8,7 @@ export interface CaseStudy {
   slug: string;
   fullContent?: {
     introduction?: string;
+    projectOverview?: string;
     challenge?: string;
     research?: {
       methodologies?: string[];
@@ -16,7 +17,6 @@ export interface CaseStudy {
     solution?: string;
     impact?: string;
     conclusion?: string;
-    callToAction?: string;
   };
 }
 
@@ -29,7 +29,8 @@ export const caseStudies: CaseStudy[] = [
     imageUrl: 'https://images.unsplash.com/photo-1576091160550-2173dba999ef?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
     slug: 'health-tech',
     fullContent: {
-      introduction: "Every morning, Sarah Johnson, an office manager at an oncology clinic, faces a critical task: coordinating meetings between her medical staff and pharmaceutical representatives. The stakes are high—each meeting must provide value, delivering crucial updates on cancer treatments that could influence patient care decisions. Yet, the existing scheduling system often leads to mismatches, wasting precious time and resources.",
+      introduction: "Every morning, Sarah Johnson, an office manager at an oncology clinic, faces a critical task: coordinating meetings between her medical staff and pharmaceutical representatives. The stakes are high—each meeting must provide value, delivering crucial updates on cancer treatments that could influence patient care decisions. Yet, the existing scheduling system often leads to mismatches, wasting precious time and resources. This case study details our journey to develop a solution that not only addresses these mismatches but revolutionizes the way appointments are scheduled to prioritize efficiency and relevance.",
+      projectOverview: "To overhaul the inefficient scheduling system used in multiple oncology clinics, ensuring that appointments align perfectly with the clinic's immediate informational needs, enhancing both operational efficiency and patient care quality.",
       challenge: "Office managers like Sarah were constantly struggling with an outdated system that failed to adequately match pharmaceutical representatives with the clinic's urgent needs, leading to unproductive appointments and direct negative impacts on patient care.",
       research: {
         methodologies: [
@@ -45,8 +46,7 @@ export const caseStudies: CaseStudy[] = [
       },
       solution: "A new feature was integrated into the scheduling software, allowing office managers to categorize appointments based on the specific information needs, aligning pharmaceutical representatives' expertise directly with the clinic's requirements.",
       impact: "The implementation of the new system led to a 30% reduction in administrative overhead and significantly improved the relevance of meetings, enhancing patient care effectiveness.",
-      conclusion: "The redesigned scheduling system has fundamentally improved how Sarah and her colleagues manage their daily responsibilities, ensuring every appointment is both timely and pertinent. This case study demonstrates the crucial role of targeted UX research and adaptive design solutions in addressing specific healthcare operational challenges.",
-      callToAction: "Are operational inefficiencies affecting your healthcare environment? Reach out to learn how our customized UX solutions can make a difference."
+      conclusion: "The redesigned scheduling system has fundamentally improved how Sarah and her colleagues manage their daily responsibilities, ensuring every appointment is both timely and pertinent. This case study demonstrates the crucial role of targeted UX research and adaptive design solutions in addressing specific healthcare operational challenges."
     }
   },
   {

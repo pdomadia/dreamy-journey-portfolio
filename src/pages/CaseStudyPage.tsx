@@ -5,15 +5,15 @@ import Layout from '@/components/Layout';
 import { Button } from '@/components/ui/button';
 import { 
   ArrowLeft, 
-  ChartBar, 
   FileText, 
-  Lightbulb, 
   Search, 
-  TrendingUp,
+  Lightbulb, 
+  ChartBar,
   CheckSquare,
   Target,
   ArrowDownSquare,
-  ArrowUpSquare
+  ArrowUpSquare,
+  Info
 } from 'lucide-react';
 import { 
   Breadcrumb,
@@ -24,7 +24,6 @@ import {
   BreadcrumbSeparator,
 } from '@/components/ui/breadcrumb';
 import { caseStudies } from '@/data/caseStudies';
-import { AspectRatio } from '@/components/ui/aspect-ratio';
 import { Card, CardContent } from '@/components/ui/card';
 import { Separator } from '@/components/ui/separator';
 
@@ -88,7 +87,7 @@ const CaseStudyPage: React.FC = () => {
             </div>
             
             <h1 className="text-3xl md:text-4xl font-serif font-semibold text-gray-900 mb-4">
-              {caseStudy?.title}
+              Case Study: {caseStudy?.title}
             </h1>
             
             <div className="h-1 w-16 bg-forest-DEFAULT rounded mt-2 mb-6"></div>
@@ -109,34 +108,9 @@ const CaseStudyPage: React.FC = () => {
                 </div>
                 
                 <div className="pl-7">
-                  <Card className="border-none shadow-none bg-gray-50 p-4 mb-6 rounded-lg">
-                    <CardContent className="p-0">
-                      <p className="text-gray-600 italic">
-                        Storytelling Pitch: Every morning, Sarah Johnson, an office manager at an oncology clinic, 
-                        faces a critical task: coordinating meetings between her medical staff and pharmaceutical 
-                        representatives.
-                      </p>
-                    </CardContent>
-                  </Card>
-                
                   <p className="text-base leading-relaxed mb-6">
                     {caseStudy.fullContent.introduction}
                   </p>
-
-                  {/* Visual: Sarah at her desk */}
-                  <div className="my-6 rounded-lg overflow-hidden border border-gray-200">
-                    <AspectRatio ratio={16/9}>
-                      <img 
-                        src="https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" 
-                        alt="Sarah Johnson reviewing digital schedule" 
-                        className="object-cover w-full h-full"
-                      />
-                    </AspectRatio>
-                    <div className="bg-gray-50 p-3 text-sm text-gray-500 flex items-center gap-2">
-                      <span className="h-1 w-1 bg-gray-400 rounded-full"></span>
-                      Sarah Johnson, office manager, reviewing the daily appointment schedule
-                    </div>
-                  </div>
                 </div>
               </section>
 
@@ -160,9 +134,7 @@ const CaseStudyPage: React.FC = () => {
                       <div>
                         <p className="font-medium text-blue-800 mb-1">Objective:</p>
                         <p className="text-blue-800">
-                          To overhaul the inefficient scheduling system used in multiple oncology clinics, 
-                          ensuring that appointments align perfectly with the clinic's immediate informational needs, 
-                          enhancing both operational efficiency and patient care quality.
+                          {caseStudy.fullContent.projectOverview}
                         </p>
                       </div>
                     </div>
@@ -214,10 +186,7 @@ const CaseStudyPage: React.FC = () => {
                   <div className="bg-amber-50 p-4 rounded-lg my-6 border-l-4 border-amber-200">
                     <div className="flex">
                       <div className="text-amber-500 mr-3 flex-shrink-0">
-                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                          <path d="M12 9v4M12 17h.01" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-                          <path d="M3 12a9 9 0 1 0 18 0 9 9 0 0 0-18 0 Z" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-                        </svg>
+                        <Info size={20} />
                       </div>
                       <p className="text-amber-800">
                         <strong>Over 25% of appointments were ineffective</strong>, failing to deliver necessary treatment updates.
@@ -242,9 +211,9 @@ const CaseStudyPage: React.FC = () => {
                 </div>
                 
                 <div className="pl-7">
-                  <div className="mb-4">
-                    <h3 className="text-base font-medium mb-2 text-gray-700">Methodologies Employed:</h3>
-                    <ul className="space-y-2 ml-2">
+                  <div className="mb-6">
+                    <h3 className="text-base font-medium mb-3 text-gray-700">Methodologies Employed:</h3>
+                    <ul className="space-y-2.5 ml-2">
                       {caseStudy.fullContent.research?.methodologies?.map((methodology, index) => (
                         <li key={index} className="flex items-start gap-2">
                           <div className="h-5 w-5 rounded-full bg-gray-100 flex items-center justify-center mt-0.5">
@@ -257,8 +226,8 @@ const CaseStudyPage: React.FC = () => {
                   </div>
                   
                   <div>
-                    <h3 className="text-base font-medium mb-2 text-gray-700">Key Insights:</h3>
-                    <ul className="space-y-2 ml-2">
+                    <h3 className="text-base font-medium mb-3 text-gray-700">Key Insights:</h3>
+                    <ul className="space-y-2.5 ml-2">
                       {caseStudy.fullContent.research?.insights?.map((insight, index) => (
                         <li key={index} className="flex items-start gap-2">
                           <CheckSquare size={16} className="text-forest-DEFAULT mt-1 flex-shrink-0" />
@@ -288,6 +257,37 @@ const CaseStudyPage: React.FC = () => {
                   <p className="mb-6 text-base leading-relaxed">
                     {caseStudy.fullContent.solution}
                   </p>
+
+                  {/* Solution visual */}
+                  <div className="grid md:grid-cols-2 gap-6 my-6 p-5 bg-gray-50 rounded-lg border border-gray-200">
+                    <div className="bg-white p-4 rounded-lg border border-gray-200 shadow-sm">
+                      <div className="text-gray-800 font-medium mb-2">Before Solution</div>
+                      <div className="bg-gray-100 p-3 rounded">
+                        <div className="h-6 bg-gray-300 rounded mb-2"></div>
+                        <div className="h-4 bg-gray-300 rounded w-3/4 mb-2"></div>
+                        <div className="h-4 bg-gray-300 rounded w-1/2"></div>
+                      </div>
+                      <p className="text-xs text-gray-500 mt-3">
+                        Old interface with limited categorization options
+                      </p>
+                    </div>
+                    <div className="bg-white p-4 rounded-lg border border-gray-200 shadow-sm">
+                      <div className="text-forest-DEFAULT font-medium mb-2">After Solution</div>
+                      <div className="bg-gray-100 p-3 rounded">
+                        <div className="h-6 bg-forest-light rounded mb-2"></div>
+                        <div className="h-4 bg-forest-light rounded w-3/4 mb-2"></div>
+                        <div className="flex gap-2 mb-2">
+                          <div className="h-4 w-1/4 bg-blue-200 rounded"></div>
+                          <div className="h-4 w-1/4 bg-green-200 rounded"></div>
+                          <div className="h-4 w-1/4 bg-amber-200 rounded"></div>
+                        </div>
+                        <div className="h-4 bg-forest-light rounded w-1/2"></div>
+                      </div>
+                      <p className="text-xs text-gray-500 mt-3">
+                        New interface with categorization by information needs
+                      </p>
+                    </div>
+                  </div>
                 </div>
               </section>
 
@@ -301,7 +301,7 @@ const CaseStudyPage: React.FC = () => {
                   </div>
                   <h2 className="text-xl font-medium text-gray-800 flex items-center gap-2">
                     Impact and Reflections
-                    <TrendingUp size={18} className="text-green-500" />
+                    <ChartBar size={18} className="text-green-500" />
                   </h2>
                 </div>
                 
@@ -324,7 +324,7 @@ const CaseStudyPage: React.FC = () => {
                         
                         <div className="flex items-center gap-3 p-3 bg-gray-50 rounded-lg border border-gray-100">
                           <div className="flex-shrink-0 p-1.5 bg-red-100 rounded-md">
-                            <ArrowDownSquare size={20} className="text-red-500" />
+                            <ArrowUpSquare size={20} className="text-red-500" />
                           </div>
                           <div>
                             <div className="flex items-baseline gap-1.5">
