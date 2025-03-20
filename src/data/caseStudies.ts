@@ -9,6 +9,10 @@ export interface CaseStudy {
   fullContent?: {
     introduction?: string;
     projectOverview?: string;
+    role?: {
+      primary?: string;
+      collaboration?: string;
+    };
     challenge?: string;
     research?: {
       methodologies?: string[];
@@ -31,6 +35,10 @@ export const caseStudies: CaseStudy[] = [
     fullContent: {
       introduction: "Every morning, Sarah Johnson, an office manager at an oncology clinic, faces a critical task: coordinating meetings between her medical staff and pharmaceutical representatives. The stakes are high—each meeting must provide value, delivering crucial updates on cancer treatments that could influence patient care decisions. Yet, the existing scheduling system often leads to mismatches, wasting precious time and resources. This case study details our journey to develop a solution that not only addresses these mismatches but revolutionizes the way appointments are scheduled to prioritize efficiency and relevance.",
       projectOverview: "To overhaul the inefficient scheduling system used in multiple oncology clinics, ensuring that appointments align perfectly with the clinic's immediate informational needs, enhancing both operational efficiency and patient care quality.",
+      role: {
+        primary: "UX Research and Product Design: I led the UX research initiatives, which included gathering insights through stakeholder interviews, observational studies, and surveys to identify the main inefficiencies in the existing system.",
+        collaboration: "Collaboration: Worked closely with a lead product manager and a lead developer to ensure the feasibility and user-centric integration of the design solutions."
+      },
       challenge: "Office managers like Sarah were constantly struggling with an outdated system that failed to adequately match pharmaceutical representatives with the clinic's urgent needs, leading to unproductive appointments and direct negative impacts on patient care.",
       research: {
         methodologies: [
