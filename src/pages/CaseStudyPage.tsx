@@ -1,3 +1,4 @@
+
 import React from 'react';
 import { useParams, Link } from 'react-router-dom';
 import Layout from '@/components/Layout';
@@ -5,14 +6,14 @@ import { Button } from '@/components/ui/button';
 import { 
   ArrowLeft, 
   ChartBar, 
-  PieChart, 
   FileText, 
   Lightbulb, 
   Search, 
   TrendingUp,
   CheckSquare,
   Target,
-  MoveRight
+  ArrowDownSquare,
+  ArrowUpSquare
 } from 'lucide-react';
 import { 
   Breadcrumb,
@@ -24,35 +25,8 @@ import {
 } from '@/components/ui/breadcrumb';
 import { caseStudies } from '@/data/caseStudies';
 import { AspectRatio } from '@/components/ui/aspect-ratio';
-import {
-  BarChart,
-  Bar,
-  XAxis,
-  YAxis,
-  CartesianGrid,
-  Tooltip,
-  ResponsiveContainer,
-  Legend
-} from 'recharts';
 import { Card, CardContent } from '@/components/ui/card';
 import { Separator } from '@/components/ui/separator';
-import { ChartContainer, ChartTooltip, ChartTooltipContent } from '@/components/ui/chart';
-
-const adminBurdenData = [
-  { name: 'Before', administrative: 100, relevance: 75 },
-  { name: 'After', administrative: 70, relevance: 95 }
-];
-
-const chartConfig = {
-  administrative: {
-    label: "Administrative Burden",
-    color: "#ef4444"
-  },
-  relevance: {
-    label: "Meeting Relevance",
-    color: "#22c55e"
-  }
-};
 
 const CaseStudyPage: React.FC = () => {
   const { id } = useParams<{ id: string }>();
@@ -242,7 +216,7 @@ const CaseStudyPage: React.FC = () => {
                       <div className="text-amber-500 mr-3 flex-shrink-0">
                         <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                           <path d="M12 9v4M12 17h.01" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-                          <path d="M3 12a9 9 0 1 0 18 0 9 9 0 0 0-18 0Z" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                          <path d="M3 12a9 9 0 1 0 18 0 9 9 0 0 0-18 0 Z" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
                         </svg>
                       </div>
                       <p className="text-amber-800">
@@ -319,7 +293,7 @@ const CaseStudyPage: React.FC = () => {
 
               <Separator className="my-6" />
               
-              {/* Impact Section */}
+              {/* Impact Section with improved visualization */}
               <section>
                 <div className="flex items-center gap-2 mb-4">
                   <div className="w-5 h-5 bg-forest-light rounded-full flex items-center justify-center">
@@ -336,28 +310,78 @@ const CaseStudyPage: React.FC = () => {
                     {caseStudy.fullContent.impact}
                   </p>
 
-                  {/* Visual: Dynamic Graph */}
+                  {/* New, simplified visualization using comparison cards */}
                   <div className="bg-white p-5 rounded-lg my-6 border border-gray-200">
-                    <h3 className="text-base font-medium mb-3 text-gray-700 flex items-center gap-2">
-                      <PieChart className="text-forest-dark" size={18} />
+                    <h3 className="text-base font-medium mb-4 text-gray-700 flex items-center gap-2">
+                      <ChartBar className="text-forest-dark" size={18} />
                       Results After Implementation
                     </h3>
-                    <div className="h-64 w-full">
-                      <ChartContainer config={chartConfig}>
-                        <ResponsiveContainer width="100%" height="100%">
-                          <BarChart data={adminBurdenData} margin={{ top: 20, right: 30, left: 20, bottom: 5 }}>
-                            <CartesianGrid strokeDasharray="3 3" stroke="#f0f0f0" />
-                            <XAxis dataKey="name" tick={{ fill: '#6b7280' }} />
-                            <YAxis tick={{ fill: '#6b7280' }} />
-                            <ChartTooltip content={<ChartTooltipContent />} />
-                            <Legend wrapperStyle={{ paddingTop: 10 }} />
-                            <Bar dataKey="administrative" name="Administrative Burden (%)" fill="var(--color-administrative)" />
-                            <Bar dataKey="relevance" name="Meeting Relevance (%)" fill="var(--color-relevance)" />
-                          </BarChart>
-                        </ResponsiveContainer>
-                      </ChartContainer>
+                    
+                    <div className="grid md:grid-cols-2 gap-6">
+                      {/* Before & After: Administrative Burden */}
+                      <div className="space-y-4">
+                        <h4 className="text-sm font-medium text-gray-600">Administrative Burden</h4>
+                        
+                        <div className="flex items-center gap-3 p-3 bg-gray-50 rounded-lg border border-gray-100">
+                          <div className="flex-shrink-0 p-1.5 bg-red-100 rounded-md">
+                            <ArrowDownSquare size={20} className="text-red-500" />
+                          </div>
+                          <div>
+                            <div className="flex items-baseline gap-1.5">
+                              <span className="text-2xl font-bold text-gray-800">100%</span>
+                              <span className="text-xs text-gray-500">BEFORE</span>
+                            </div>
+                            <p className="text-xs text-gray-500">High administrative overhead</p>
+                          </div>
+                        </div>
+                        
+                        <div className="flex items-center gap-3 p-3 bg-gray-50 rounded-lg border border-gray-100">
+                          <div className="flex-shrink-0 p-1.5 bg-green-100 rounded-md">
+                            <ArrowDownSquare size={20} className="text-green-500" />
+                          </div>
+                          <div>
+                            <div className="flex items-baseline gap-1.5">
+                              <span className="text-2xl font-bold text-gray-800">70%</span>
+                              <span className="text-xs text-gray-500">AFTER</span>
+                            </div>
+                            <p className="text-xs text-gray-500">30% reduction in burden</p>
+                          </div>
+                        </div>
+                      </div>
+                      
+                      {/* Before & After: Meeting Relevance */}
+                      <div className="space-y-4">
+                        <h4 className="text-sm font-medium text-gray-600">Meeting Relevance</h4>
+                        
+                        <div className="flex items-center gap-3 p-3 bg-gray-50 rounded-lg border border-gray-100">
+                          <div className="flex-shrink-0 p-1.5 bg-red-100 rounded-md">
+                            <ArrowDownSquare size={20} className="text-red-500" />
+                          </div>
+                          <div>
+                            <div className="flex items-baseline gap-1.5">
+                              <span className="text-2xl font-bold text-gray-800">75%</span>
+                              <span className="text-xs text-gray-500">BEFORE</span>
+                            </div>
+                            <p className="text-xs text-gray-500">Low meeting relevance score</p>
+                          </div>
+                        </div>
+                        
+                        <div className="flex items-center gap-3 p-3 bg-gray-50 rounded-lg border border-gray-100">
+                          <div className="flex-shrink-0 p-1.5 bg-green-100 rounded-md">
+                            <ArrowUpSquare size={20} className="text-green-500" />
+                          </div>
+                          <div>
+                            <div className="flex items-baseline gap-1.5">
+                              <span className="text-2xl font-bold text-gray-800">95%</span>
+                              <span className="text-xs text-gray-500">AFTER</span>
+                            </div>
+                            <p className="text-xs text-gray-500">20% improvement in relevance</p>
+                          </div>
+                        </div>
+                      </div>
                     </div>
-                    <p className="text-xs text-gray-500 mt-3 text-center">
+                    
+                    <p className="text-xs text-gray-500 mt-5 text-center border-t border-gray-100 pt-4">
                       Administrative burden decreased by 30% while meeting relevance improved by 20%
                     </p>
                   </div>
@@ -381,22 +405,6 @@ const CaseStudyPage: React.FC = () => {
                   <p className="mb-6 text-base leading-relaxed">
                     {caseStudy.fullContent.conclusion}
                   </p>
-                </div>
-              </section>
-              
-              {/* Call to Action Section */}
-              <section>
-                <div className="bg-gray-50 p-6 rounded-lg my-6 border border-gray-200">
-                  <h3 className="text-base font-medium mb-3 text-gray-700">Call to Action</h3>
-                  <p className="mb-4 text-gray-600">
-                    {caseStudy.fullContent.callToAction}
-                  </p>
-                  <Button asChild className="mt-2 bg-forest-DEFAULT hover:bg-forest-dark">
-                    <Link to="/#contact" className="flex items-center gap-2">
-                      Contact Us
-                      <MoveRight size={16} />
-                    </Link>
-                  </Button>
                 </div>
               </section>
             </div>
