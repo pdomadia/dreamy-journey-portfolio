@@ -1,4 +1,3 @@
-
 import React from 'react';
 import { useParams, Link } from 'react-router-dom';
 import Layout from '@/components/Layout';
@@ -25,7 +24,6 @@ import {
   BreadcrumbSeparator,
 } from '@/components/ui/breadcrumb';
 import { caseStudies } from '@/data/caseStudies';
-import { Card, CardContent } from '@/components/ui/card';
 import { Separator } from '@/components/ui/separator';
 
 const CaseStudyPage: React.FC = () => {
@@ -129,7 +127,7 @@ const CaseStudyPage: React.FC = () => {
                 </div>
                 
                 <div className="pl-7">
-                  <div className="bg-blue-50 p-6 rounded-lg border-l-4 border-blue-200">
+                  <div className="bg-blue-50 p-6 rounded-lg border-l-4 border-blue-200 mb-6">
                     <div className="flex items-start">
                       <Target className="text-blue-500 mt-1 mr-3 flex-shrink-0" size={20} />
                       <div>
@@ -140,58 +138,25 @@ const CaseStudyPage: React.FC = () => {
                       </div>
                     </div>
                   </div>
+                  
+                  {caseStudy.fullContent.role && (
+                    <div className="bg-purple-50 p-6 rounded-lg border-l-4 border-purple-200">
+                      <p className="text-purple-900 font-medium mb-2">My Role:</p>
+                      <p className="text-purple-900">
+                        {caseStudy.fullContent.role}
+                      </p>
+                    </div>
+                  )}
                 </div>
               </section>
 
               <Separator className="my-6" />
               
-              {/* New Role Section */}
-              {caseStudy.fullContent.role && (
-                <>
-                  <section>
-                    <div className="flex items-center gap-2 mb-4">
-                      <div className="w-5 h-5 bg-forest-light rounded-full flex items-center justify-center">
-                        <span className="text-forest-dark text-xs font-bold">3</span>
-                      </div>
-                      <h2 className="text-xl font-medium text-gray-800">
-                        My Role
-                      </h2>
-                    </div>
-                    
-                    <div className="pl-7">
-                      <div className="bg-purple-50 p-6 rounded-lg border-l-4 border-purple-200">
-                        <div className="space-y-4">
-                          {caseStudy.fullContent.role.primary && (
-                            <div className="flex items-start">
-                              <Users className="text-purple-600 mt-1 mr-3 flex-shrink-0" size={20} />
-                              <p className="text-purple-900">
-                                {caseStudy.fullContent.role.primary}
-                              </p>
-                            </div>
-                          )}
-                          
-                          {caseStudy.fullContent.role.collaboration && (
-                            <div className="flex items-start">
-                              <Users className="text-purple-600 mt-1 mr-3 flex-shrink-0" size={20} />
-                              <p className="text-purple-900">
-                                {caseStudy.fullContent.role.collaboration}
-                              </p>
-                            </div>
-                          )}
-                        </div>
-                      </div>
-                    </div>
-                  </section>
-                  
-                  <Separator className="my-6" />
-                </>
-              )}
-              
               {/* Challenges Section */}
               <section>
                 <div className="flex items-center gap-2 mb-4">
                   <div className="w-5 h-5 bg-forest-light rounded-full flex items-center justify-center">
-                    <span className="text-forest-dark text-xs font-bold">{caseStudy.fullContent.role ? "4" : "3"}</span>
+                    <span className="text-forest-dark text-xs font-bold">3</span>
                   </div>
                   <h2 className="text-xl font-medium text-gray-800">
                     The Challenge
@@ -245,7 +210,7 @@ const CaseStudyPage: React.FC = () => {
               <section>
                 <div className="flex items-center gap-2 mb-4">
                   <div className="w-5 h-5 bg-forest-light rounded-full flex items-center justify-center">
-                    <span className="text-forest-dark text-xs font-bold">{caseStudy.fullContent.role ? "5" : "4"}</span>
+                    <span className="text-forest-dark text-xs font-bold">4</span>
                   </div>
                   <h2 className="text-xl font-medium text-gray-800 flex items-center gap-2">
                     Research Insights
@@ -288,7 +253,7 @@ const CaseStudyPage: React.FC = () => {
               <section>
                 <div className="flex items-center gap-2 mb-4">
                   <div className="w-5 h-5 bg-forest-light rounded-full flex items-center justify-center">
-                    <span className="text-forest-dark text-xs font-bold">{caseStudy.fullContent.role ? "6" : "5"}</span>
+                    <span className="text-forest-dark text-xs font-bold">5</span>
                   </div>
                   <h2 className="text-xl font-medium text-gray-800 flex items-center gap-2">
                     Solution Implementation
@@ -340,7 +305,7 @@ const CaseStudyPage: React.FC = () => {
               <section>
                 <div className="flex items-center gap-2 mb-4">
                   <div className="w-5 h-5 bg-forest-light rounded-full flex items-center justify-center">
-                    <span className="text-forest-dark text-xs font-bold">{caseStudy.fullContent.role ? "7" : "6"}</span>
+                    <span className="text-forest-dark text-xs font-bold">6</span>
                   </div>
                   <h2 className="text-xl font-medium text-gray-800 flex items-center gap-2">
                     Impact and Reflections
@@ -437,7 +402,7 @@ const CaseStudyPage: React.FC = () => {
               <section>
                 <div className="flex items-center gap-2 mb-4">
                   <div className="w-5 h-5 bg-forest-light rounded-full flex items-center justify-center">
-                    <span className="text-forest-dark text-xs font-bold">{caseStudy.fullContent.role ? "8" : "7"}</span>
+                    <span className="text-forest-dark text-xs font-bold">7</span>
                   </div>
                   <h2 className="text-xl font-medium text-gray-800">
                     Conclusion
