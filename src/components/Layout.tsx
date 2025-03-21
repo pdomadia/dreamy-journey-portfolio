@@ -35,39 +35,61 @@ const Layout: React.FC<LayoutProps> = ({ children }) => {
     };
   }, []);
 
-  // Add an effect to remove any Lovable-related elements that might be injected at runtime
+  // Enhanced effect to remove any Lovable-related elements that might be injected at runtime
   useEffect(() => {
     // Function to remove any Lovable badges or popups
     const removeLovableBadges = () => {
-      // Remove any elements with class names containing "lovable"
-      document.querySelectorAll('[class*="lovable"], [id*="lovable"], [data-lovable]').forEach(el => {
-        el.remove();
-      });
+      // More comprehensive query selector to catch all possible badge variations
+      const badgeSelectors = [
+        '[class*="lovable"]', 
+        '[id*="lovable"]', 
+        '[data-lovable]',
+        '.badge', 
+        '.floating-badge', 
+        '.editor-badge',
+        '[class*="edit-with"]',
+        '[class*="badge"]',
+        '[id*="badge"]',
+        '[class*="editor"]',
+        '[id*="editor"]'
+      ];
       
-      // Look for other potential selectors that might be used for the badge
-      document.querySelectorAll('.badge, .floating-badge, .editor-badge').forEach(el => {
-        if (el.innerHTML.toLowerCase().includes('lovable') || 
-            el.textContent?.toLowerCase().includes('lovable')) {
-          el.remove();
-        }
+      badgeSelectors.forEach(selector => {
+        document.querySelectorAll(selector).forEach(el => {
+          // Check if the element or its children contain "lovable" text
+          if (el.innerHTML.toLowerCase().includes('lovable') || 
+              el.textContent?.toLowerCase().includes('lovable') ||
+              el.innerHTML.toLowerCase().includes('edit with') || 
+              el.textContent?.toLowerCase().includes('edit with')) {
+            el.remove();
+          }
+        });
       });
     };
     
-    // Run once on mount
+    // Run immediately on mount
     removeLovableBadges();
     
-    // Set up a mutation observer to catch dynamically added elements
-    const observer = new MutationObserver((mutations) => {
-      removeLovableBadges();
+    // Set up a more aggressive mutation observer
+    const observer = new MutationObserver(() => {
+      requestAnimationFrame(removeLovableBadges);
     });
     
-    // Start observing the document with the configured parameters
+    // Start observing with more comprehensive parameters
     observer.observe(document.body, { 
       childList: true,
-      subtree: true
+      subtree: true,
+      attributes: true,
+      characterData: true
     });
     
-    return () => observer.disconnect();
+    // Additional interval as backup to catch any elements that might slip through
+    const interval = setInterval(removeLovableBadges, 1000);
+    
+    return () => {
+      observer.disconnect();
+      clearInterval(interval);
+    };
   }, []);
 
   return (

@@ -75,9 +75,13 @@ const addToRemoveQueue = (toastId: string) => {
 export const reducer = (state: State, action: Action): State => {
   switch (action.type) {
     case "ADD_TOAST":
-      // Filter out any "edits by lovable" toast
-      if (action.toast.title === "edits by lovable" || 
-          action.toast.description?.toString().includes("lovable")) {
+      // Enhanced filtering to catch more variations of Lovable-related content
+      if (
+        action.toast.title?.toString().toLowerCase().includes('lovable') || 
+        action.toast.description?.toString().toLowerCase().includes('lovable') ||
+        action.toast.title?.toString().toLowerCase().includes('edit with') || 
+        action.toast.description?.toString().toLowerCase().includes('edit with')
+      ) {
         return state
       }
       return {
@@ -146,9 +150,13 @@ function dispatch(action: Action) {
 type Toast = Omit<ToasterToast, "id">
 
 function toast({ ...props }: Toast) {
-  // Skip any "edits by lovable" toasts
-  if (props.title === "edits by lovable" || 
-      props.description?.toString().includes("lovable")) {
+  // Enhanced filtering for the toast function
+  if (
+    props.title?.toString().toLowerCase().includes('lovable') || 
+    props.description?.toString().toLowerCase().includes('lovable') ||
+    props.title?.toString().toLowerCase().includes('edit with') || 
+    props.description?.toString().toLowerCase().includes('edit with')
+  ) {
     return { id: "", dismiss: () => {}, update: () => {} }
   }
   
