@@ -22,9 +22,10 @@ const CaseStudyCard: React.FC<CaseStudyCardProps> = ({
   link
 }) => {
   return (
-    <div 
+    <Link 
+      to={link}
       className={cn(
-        "flex flex-col rounded-md overflow-hidden bg-white shadow-sm border border-earthy-dark/20 reveal card-hover transition-all duration-500 group",
+        "block flex flex-col rounded-md overflow-hidden bg-white shadow-sm border border-earthy-dark/20 reveal card-hover transition-all duration-500 group h-full",
         index === 1 ? "reveal-delay-1" : index === 2 ? "reveal-delay-2" : ""
       )}
     >
@@ -44,15 +45,14 @@ const CaseStudyCard: React.FC<CaseStudyCardProps> = ({
       <div className="p-6 flex-grow flex flex-col">
         <h3 className="text-xl font-medium mb-3">{title}</h3>
         <p className="text-charcoal/80 mb-4 flex-grow">{description}</p>
-        <Link 
-          to={link} 
-          className="inline-flex items-center gap-2 text-forest-dark hover:text-forest-DEFAULT group-hover:gap-3 transition-all duration-300"
+        <div 
+          className="inline-flex items-center gap-2 text-forest-dark group-hover:gap-3 transition-all duration-300"
         >
           View case study
           <ArrowRight size={16} className="transition-transform group-hover:translate-x-1" />
-        </Link>
+        </div>
       </div>
-    </div>
+    </Link>
   );
 };
 

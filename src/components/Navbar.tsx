@@ -1,7 +1,7 @@
 
 import React, { useState, useEffect } from 'react';
 import { cn } from '@/lib/utils';
-import { Menu, X } from 'lucide-react';
+import { Menu, X, Sparkles } from 'lucide-react';
 
 const Navbar: React.FC = () => {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -36,7 +36,7 @@ const Navbar: React.FC = () => {
           href="#" 
           className="text-charcoal font-medium text-xl tracking-tight hover:text-forest-dark transition-colors duration-300"
         >
-          Portfolio
+          <Sparkles size={24} className="text-forest-dark" />
         </a>
 
         {/* Desktop Navigation */}
