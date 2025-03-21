@@ -1,3 +1,4 @@
+
 import * as React from "react"
 
 import type {
@@ -74,6 +75,11 @@ const addToRemoveQueue = (toastId: string) => {
 export const reducer = (state: State, action: Action): State => {
   switch (action.type) {
     case "ADD_TOAST":
+      // Filter out any "edits by lovable" toast
+      if (action.toast.title === "edits by lovable" || 
+          action.toast.description?.toString().includes("lovable")) {
+        return state
+      }
       return {
         ...state,
         toasts: [action.toast, ...state.toasts].slice(0, TOAST_LIMIT),
@@ -140,6 +146,12 @@ function dispatch(action: Action) {
 type Toast = Omit<ToasterToast, "id">
 
 function toast({ ...props }: Toast) {
+  // Skip any "edits by lovable" toasts
+  if (props.title === "edits by lovable" || 
+      props.description?.toString().includes("lovable")) {
+    return { id: "", dismiss: () => {}, update: () => {} }
+  }
+  
   const id = genId()
 
   const update = (props: ToasterToast) =>
