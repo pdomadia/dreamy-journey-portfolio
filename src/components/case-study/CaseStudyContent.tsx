@@ -1,9 +1,7 @@
-
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
 import { ArrowLeft, ArrowRight } from 'lucide-react';
 import { Separator } from '@/components/ui/separator';
-import { Button } from '@/components/ui/button';
 import { CaseStudy, caseStudies } from '@/data/caseStudies';
 import IntroductionSection from './sections/IntroductionSection';
 import ProjectOverviewSection from './sections/ProjectOverviewSection';
@@ -108,35 +106,33 @@ const CaseStudyContent: React.FC<CaseStudyContentProps> = ({ caseStudy }) => {
         <div className="flex justify-between items-center">
           {/* Previous Case Study Link */}
           {prevCaseStudy && (
-            <Button 
-              variant="outline"
-              className="flex items-center gap-2 border-gray-300 hover:bg-gray-100"
+            <div 
               onClick={() => handleNavigation(prevCaseStudy.slug)}
+              className="flex items-center gap-2 text-gray-700 hover:text-primary transition-colors cursor-pointer"
             >
               <ArrowLeft size={16} />
               <div className="flex flex-col items-start">
                 <span className="text-xs text-gray-500">Previous Case Study</span>
                 <span className="text-sm font-medium">{prevCaseStudy.title}</span>
               </div>
-            </Button>
+            </div>
           )}
           
-          {/* Spacer when only next button is shown */}
+          {/* Spacer when only next link is shown */}
           {!prevCaseStudy && nextCaseStudy && <div></div>}
           
           {/* Next Case Study Link */}
           {nextCaseStudy && (
-            <Button 
-              variant="outline"
-              className="flex items-center gap-2 border-gray-300 hover:bg-gray-100 ml-auto"
+            <div 
               onClick={() => handleNavigation(nextCaseStudy.slug)}
+              className="flex items-center gap-2 text-gray-700 hover:text-primary transition-colors cursor-pointer ml-auto"
             >
               <div className="flex flex-col items-end">
                 <span className="text-xs text-gray-500">Next Case Study</span>
                 <span className="text-sm font-medium">{nextCaseStudy.title}</span>
               </div>
               <ArrowRight size={16} />
-            </Button>
+            </div>
           )}
         </div>
       </div>
