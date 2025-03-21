@@ -1,3 +1,4 @@
+
 import React from 'react';
 import { Sparkles, Leaf, Coffee, Linkedin, Mail, FileText } from 'lucide-react';
 import { Button } from "@/components/ui/button";
@@ -25,7 +26,7 @@ const About: React.FC = () => {
             <div className="space-y-6 reveal reveal-delay-1">
               <p className="text-stone/90 leading-relaxed">I'm a Product Designer and Accessibility Advocate, living in NYC, and I'm super passionate about making tech work for everyone. My background in pediatric OT really drives that. I've gone from hands-on healthcare to digital innovation, always focused on creating solutions that really meet human needs. I aim to design experiences that are accessible, intuitive, and even bring a little joy.
               <br /><br />
-              When I'm not designing, I love exploring new places, finding my zen with new workouts, and experimenting in the kitchen.
+              When I'm not designing, I love traveling to new places, finding my zen with new workouts, and experimenting in the kitchen.
               <br /><br />
               Let's connect if you're into accessible design, travel, or food!</p>
               <p className="text-stone/90 leading-relaxed"></p>
@@ -53,7 +54,7 @@ const About: React.FC = () => {
               <Button 
                 variant="outline" 
                 className="bg-white/80 border-sage-dark hover:bg-sage-light/50 hover:text-hunter-DEFAULT flex items-center gap-2"
-                onClick={() => window.open('https://drive.google.com/uc?export=download&id=YOUR_FILE_ID', '_blank')}
+                onClick={() => window.open('https://drive.google.com/file/d/1yJ3cREyQWiq2hfiCiYVMCajBjRsXJTWO/view?usp=sharing', '_blank')}
               >
                 <FileText size={18} />
                 <span>Resume</span>

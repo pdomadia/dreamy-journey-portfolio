@@ -42,7 +42,7 @@ const Contact: React.FC = () => {
             </a>
             
             <a 
-              href="https://drive.google.com/uc?export=download&id=YOUR_FILE_ID" 
+              href="https://drive.google.com/file/d/1yJ3cREyQWiq2hfiCiYVMCajBjRsXJTWO/view?usp=sharing" 
               target="_blank" 
               rel="noopener noreferrer" 
               className="flex items-center gap-2 bg-sage-dark hover:bg-sage-dark/90 text-white px-6 py-3 rounded-md transition-colors duration-300 w-full md:w-auto justify-center"
