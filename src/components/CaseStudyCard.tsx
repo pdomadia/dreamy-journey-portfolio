@@ -21,9 +21,15 @@ const CaseStudyCard: React.FC<CaseStudyCardProps> = ({
   index,
   link
 }) => {
+  const handleClick = () => {
+    // Ensure scroll to top when clicking the card
+    window.scrollTo(0, 0);
+  };
+
   return (
     <Link 
       to={link}
+      onClick={handleClick}
       className={cn(
         "block flex flex-col rounded-md overflow-hidden bg-white shadow-sm border border-earthy-dark/20 reveal card-hover transition-all duration-500 group h-full",
         index === 1 ? "reveal-delay-1" : index === 2 ? "reveal-delay-2" : ""
