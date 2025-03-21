@@ -7,14 +7,8 @@ type ToasterProps = React.ComponentProps<typeof Sonner>
 const Toaster = ({ ...props }: ToasterProps) => {
   const { theme = "system" } = useTheme()
 
-  // Filter out any toasts containing Lovable references
-  const filteredProps = {...props};
-  if (filteredProps.toasts) {
-    filteredProps.toasts = filteredProps.toasts.filter(toast => 
-      !toast.title?.toString().toLowerCase().includes('lovable') && 
-      !toast.description?.toString().toLowerCase().includes('lovable')
-    );
-  }
+  // No filtering needed here as the Sonner component doesn't expose toasts directly
+  // We'll handle filtering at the toast creation level in use-toast.ts
 
   return (
     <Sonner
@@ -31,7 +25,7 @@ const Toaster = ({ ...props }: ToasterProps) => {
             "group-[.toast]:bg-muted group-[.toast]:text-muted-foreground",
         },
       }}
-      {...filteredProps}
+      {...props}
     />
   )
 }
