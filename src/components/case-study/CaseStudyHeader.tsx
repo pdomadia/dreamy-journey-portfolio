@@ -15,9 +15,10 @@ import { CaseStudy } from '@/data/caseStudies';
 
 interface CaseStudyHeaderProps {
   caseStudy: CaseStudy;
+  onBackClick?: () => void;
 }
 
-const CaseStudyHeader: React.FC<CaseStudyHeaderProps> = ({ caseStudy }) => {
+const CaseStudyHeader: React.FC<CaseStudyHeaderProps> = ({ caseStudy, onBackClick }) => {
   return (
     <>
       {/* Breadcrumbs */}
@@ -39,7 +40,12 @@ const CaseStudyHeader: React.FC<CaseStudyHeaderProps> = ({ caseStudy }) => {
 
       {/* Back Button */}
       <div className="mb-10">
-        <Button variant="outline" asChild className="border-gray-300 hover:bg-gray-100">
+        <Button 
+          variant="outline" 
+          asChild 
+          className="border-gray-300 hover:bg-gray-100"
+          onClick={onBackClick}
+        >
           <Link to="/#case-studies">
             <ArrowLeft size={16} />
             Back to All Case Studies

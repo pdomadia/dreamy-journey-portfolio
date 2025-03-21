@@ -1,11 +1,13 @@
 
 import React, { useState, useEffect } from 'react';
+import { useLocation } from 'react-router-dom';
 import { cn } from '@/lib/utils';
 import { Menu, X, Sparkles } from 'lucide-react';
 
 const Navbar: React.FC = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const location = useLocation();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -17,10 +19,23 @@ const Navbar: React.FC = () => {
   }, []);
 
   const navLinks = [
-    { name: 'About', href: '#about' },
-    { name: 'Case Studies', href: '#case-studies' },
-    { name: 'Contact', href: '#contact' }
+    { name: 'About', href: '/#about' },
+    { name: 'Case Studies', href: '/#case-studies' },
+    { name: 'Contact', href: '/#contact' }
   ];
+
+  // Function to handle navigation and preserve scroll position
+  const handleNavLinkClick = (e: React.MouseEvent, href: string) => {
+    // If we're already on the home page, just let the hash navigation work
+    if (location.pathname === '/') {
+      return;
+    }
+    
+    // For case study pages, we need to navigate programmatically
+    e.preventDefault();
+    sessionStorage.setItem('scrollPosition', '1000'); // Approximate position of case studies section
+    window.location.href = href;
+  };
 
   return (
     <nav
@@ -33,7 +48,7 @@ const Navbar: React.FC = () => {
     >
       <div className="container flex justify-between items-center">
         <a 
-          href="#" 
+          href="/" 
           className="text-charcoal font-medium text-xl tracking-tight hover:text-forest-dark transition-colors duration-300"
         >
           <Sparkles size={24} className="text-forest-dark" />
@@ -46,6 +61,7 @@ const Navbar: React.FC = () => {
               key={link.name} 
               href={link.href} 
               className="nav-link"
+              onClick={(e) => handleNavLinkClick(e, link.href)}
             >
               {link.name}
             </a>
@@ -69,7 +85,10 @@ const Navbar: React.FC = () => {
                 key={link.name} 
                 href={link.href} 
                 className="px-8 py-3 hover:bg-earthy-DEFAULT/20 transition-colors duration-300"
-                onClick={() => setIsMobileMenuOpen(false)}
+                onClick={(e) => {
+                  handleNavLinkClick(e, link.href);
+                  setIsMobileMenuOpen(false);
+                }}
               >
                 {link.name}
               </a>

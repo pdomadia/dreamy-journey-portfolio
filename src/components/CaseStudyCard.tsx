@@ -25,7 +25,12 @@ const CaseStudyCard: React.FC<CaseStudyCardProps> = ({
   
   const handleClick = (e: React.MouseEvent) => {
     e.preventDefault(); // Prevent default Link behavior
-    navigate(link, { replace: true }); // Using replace to avoid adding to history
+    
+    // Save current scroll position
+    sessionStorage.setItem('scrollPosition', window.scrollY.toString());
+    
+    // Navigate without scroll reset
+    navigate(link);
   };
 
   return (
