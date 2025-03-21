@@ -37,6 +37,8 @@ const CaseStudyPage: React.FC = () => {
   }
 
   const handleBackClick = () => {
+    // Save scroll position before navigating
+    sessionStorage.setItem('scrollPosition', '1000'); // Approximate position of case studies section
     navigate('/#case-studies');
   };
 
