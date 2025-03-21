@@ -22,7 +22,7 @@ const CaseStudyCard: React.FC<CaseStudyCardProps> = ({
   link
 }) => {
   const handleClick = () => {
-    // Ensure scroll to top when clicking the card
+    // Ensure scroll to top happens BEFORE navigation
     window.scrollTo(0, 0);
   };
 

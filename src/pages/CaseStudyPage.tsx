@@ -1,5 +1,4 @@
-
-import React, { useEffect } from 'react';
+import React from 'react';
 import { useParams, Link } from 'react-router-dom';
 import Layout from '@/components/Layout';
 import { Button } from '@/components/ui/button';
@@ -30,11 +29,6 @@ import { Separator } from '@/components/ui/separator';
 const CaseStudyPage: React.FC = () => {
   const { id } = useParams<{ id: string }>();
   const caseStudy = caseStudies.find(study => study.slug === id);
-
-  // Scroll to top when component mounts
-  useEffect(() => {
-    window.scrollTo(0, 0);
-  }, []);
 
   if (!caseStudy) {
     return (
@@ -454,3 +448,4 @@ const CaseStudyPage: React.FC = () => {
 };
 
 export default CaseStudyPage;
+
