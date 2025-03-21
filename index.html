@@ -8,11 +8,20 @@
     <meta name="description" content="Lovable Generated Project" />
     <meta name="author" content="Lovable" />
     <meta property="og:image" content="/og-image.png" />
+    <!-- Remove any potential badge-related styles -->
+    <style>
+      [class*="lovable-badge"], [id*="lovable-badge"], [data-lovable] {
+        display: none !important;
+        visibility: hidden !important;
+        opacity: 0 !important;
+        pointer-events: none !important;
+      }
+    </style>
   </head>
 
   <body>
     <div id="root"></div>
-    <!-- Removed the Lovable script tag to eliminate the badge -->
+    <!-- All external scripts have been removed -->
     <script type="module" src="/src/main.tsx"></script>
   </body>
 </html>
