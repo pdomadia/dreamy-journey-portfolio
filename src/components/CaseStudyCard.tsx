@@ -1,6 +1,6 @@
 
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { ArrowRight } from 'lucide-react';
 import { cn } from '@/lib/utils';
 
@@ -21,9 +21,18 @@ const CaseStudyCard: React.FC<CaseStudyCardProps> = ({
   index,
   link
 }) => {
+  const navigate = useNavigate();
+  
+  const handleClick = (e: React.MouseEvent) => {
+    e.preventDefault(); // Prevent default Link behavior
+    // Navigate programmatically
+    navigate(link, { replace: true }); // Using replace to avoid adding to history
+  };
+
   return (
     <Link 
       to={link}
+      onClick={handleClick}
       className={cn(
         "block flex flex-col rounded-md overflow-hidden bg-white shadow-sm border border-earthy-dark/20 reveal card-hover transition-all duration-500 group h-full",
         index === 1 ? "reveal-delay-1" : index === 2 ? "reveal-delay-2" : ""

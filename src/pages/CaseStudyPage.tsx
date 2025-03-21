@@ -1,5 +1,5 @@
 
-import React, { useLayoutEffect } from 'react';
+import React from 'react';
 import { useParams } from 'react-router-dom';
 import Layout from '@/components/Layout';
 import { caseStudies } from '@/data/caseStudies';
@@ -10,11 +10,6 @@ import CaseStudyContent from '@/components/case-study/CaseStudyContent';
 const CaseStudyPage: React.FC = () => {
   const { id } = useParams<{ id: string }>();
   const caseStudy = caseStudies.find(study => study.slug === id);
-  
-  // Using useLayoutEffect to ensure this runs before the browser paints
-  useLayoutEffect(() => {
-    window.scrollTo(0, 0);
-  }, []);
 
   if (!caseStudy) {
     return (
