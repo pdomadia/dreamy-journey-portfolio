@@ -1,5 +1,5 @@
 
-import React from 'react';
+import React, { useEffect } from 'react';
 import { useParams } from 'react-router-dom';
 import Layout from '@/components/Layout';
 import { caseStudies } from '@/data/caseStudies';
@@ -10,6 +10,11 @@ import CaseStudyContent from '@/components/case-study/CaseStudyContent';
 const CaseStudyPage: React.FC = () => {
   const { id } = useParams<{ id: string }>();
   const caseStudy = caseStudies.find(study => study.slug === id);
+  
+  // Scroll to top when component mounts
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, [id]); // Dependency on ID ensures scrolling happens when case study changes
 
   if (!caseStudy) {
     return (

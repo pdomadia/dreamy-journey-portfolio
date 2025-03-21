@@ -25,7 +25,6 @@ const CaseStudyCard: React.FC<CaseStudyCardProps> = ({
   
   const handleClick = (e: React.MouseEvent) => {
     e.preventDefault(); // Prevent default Link behavior
-    // Navigate programmatically
     navigate(link, { replace: true }); // Using replace to avoid adding to history
   };
 
