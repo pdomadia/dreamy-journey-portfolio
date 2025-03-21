@@ -1,6 +1,6 @@
 
 import React, { useState, useEffect } from 'react';
-import { useLocation } from 'react-router-dom';
+import { useLocation, useNavigate } from 'react-router-dom';
 import { cn } from '@/lib/utils';
 import { Menu, X, Sparkles } from 'lucide-react';
 
@@ -8,6 +8,7 @@ const Navbar: React.FC = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const location = useLocation();
+  const navigate = useNavigate();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -24,17 +25,30 @@ const Navbar: React.FC = () => {
     { name: 'Contact', href: '/#contact' }
   ];
 
-  // Function to handle navigation and preserve scroll position
+  // Function to handle navigation and scroll to section
   const handleNavLinkClick = (e: React.MouseEvent, href: string) => {
-    // If we're already on the home page, just let the hash navigation work
-    if (location.pathname === '/') {
-      return;
-    }
-    
-    // For case study pages, we need to navigate programmatically
     e.preventDefault();
-    sessionStorage.setItem('scrollPosition', '1000'); // Approximate position of case studies section
-    window.location.href = href;
+    
+    // If we're not on the home page, navigate first
+    if (location.pathname !== '/') {
+      navigate('/');
+      
+      // Add a small delay to ensure navigation completes before scrolling
+      setTimeout(() => {
+        const sectionId = href.split('#')[1];
+        const section = document.getElementById(sectionId);
+        if (section) {
+          section.scrollIntoView({ behavior: 'smooth' });
+        }
+      }, 100);
+    } else {
+      // If already on home page, just scroll
+      const sectionId = href.split('#')[1];
+      const section = document.getElementById(sectionId);
+      if (section) {
+        section.scrollIntoView({ behavior: 'smooth' });
+      }
+    }
   };
 
   return (

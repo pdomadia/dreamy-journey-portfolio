@@ -1,6 +1,6 @@
 
 import React from 'react';
-import { Link, useLocation } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { ArrowLeft, FileText } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { 
@@ -19,15 +19,21 @@ interface CaseStudyHeaderProps {
 }
 
 const CaseStudyHeader: React.FC<CaseStudyHeaderProps> = ({ caseStudy, onBackClick }) => {
-  const location = useLocation();
+  const navigate = useNavigate();
 
   const handleBreadcrumbClick = (e: React.MouseEvent) => {
-    // When not on homepage, save scroll position for returning to case studies section
-    if (location.pathname !== '/') {
-      e.preventDefault();
-      sessionStorage.setItem('scrollPosition', '1000'); // Approximate position of case studies section
-      window.location.href = '/#case-studies';
-    }
+    e.preventDefault();
+    // Save current scroll position
+    sessionStorage.setItem('scrollPosition', '1000'); // Approximate position of case studies section
+    navigate('/');
+    
+    // Add a small delay to ensure navigation completes before scrolling
+    setTimeout(() => {
+      const caseStudiesSection = document.getElementById('case-studies');
+      if (caseStudiesSection) {
+        caseStudiesSection.scrollIntoView({ behavior: 'smooth' });
+      }
+    }, 100);
   };
 
   return (
@@ -55,12 +61,9 @@ const CaseStudyHeader: React.FC<CaseStudyHeaderProps> = ({ caseStudy, onBackClic
           variant="outline" 
           className="border-gray-300 hover:bg-gray-100"
           onClick={onBackClick}
-          asChild
         >
-          <Link to="/#case-studies">
-            <ArrowLeft size={16} />
-            Back to All Case Studies
-          </Link>
+          <ArrowLeft size={16} />
+          Back to All Case Studies
         </Button>
       </div>
 

@@ -16,16 +16,6 @@ const CaseStudyPage: React.FC = () => {
   useEffect(() => {
     // Scroll to top when navigating to a case study
     window.scrollTo(0, 0);
-    
-    // Clean up function to handle navigation back to home
-    return () => {
-      const savedPosition = sessionStorage.getItem('scrollPosition');
-      if (savedPosition && window.location.pathname === '/') {
-        setTimeout(() => {
-          window.scrollTo(0, parseInt(savedPosition));
-        }, 100);
-      }
-    };
   }, [id]);
 
   if (!caseStudy) {
@@ -39,7 +29,15 @@ const CaseStudyPage: React.FC = () => {
   const handleBackClick = () => {
     // Save scroll position before navigating
     sessionStorage.setItem('scrollPosition', '1000'); // Approximate position of case studies section
-    navigate('/#case-studies');
+    navigate('/');
+    
+    // Add a small delay to ensure navigation completes before scrolling
+    setTimeout(() => {
+      const caseStudiesSection = document.getElementById('case-studies');
+      if (caseStudiesSection) {
+        caseStudiesSection.scrollIntoView({ behavior: 'smooth' });
+      }
+    }, 100);
   };
 
   return (
