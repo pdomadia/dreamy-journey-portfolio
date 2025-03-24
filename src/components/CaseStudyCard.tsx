@@ -33,6 +33,9 @@ const CaseStudyCard: React.FC<CaseStudyCardProps> = ({
     navigate(link);
   };
 
+  // Add console log to debug image URL
+  console.log(`Rendering case study card: ${title} with image: ${imageUrl}`);
+
   return (
     <Link 
       to={link}
