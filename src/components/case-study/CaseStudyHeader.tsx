@@ -68,7 +68,7 @@ const CaseStudyHeader: React.FC<CaseStudyHeaderProps> = ({ caseStudy, onBackClic
       </div>
 
       {/* Title & Subtitle */}
-      <div className="mb-8">
+      <div className="mb-8 text-center">
         <div className="inline-flex items-center gap-2 text-gray-500 mb-4">
           <FileText size={16} />
           <span className="text-sm font-medium">{caseStudy?.subtitle}</span>
@@ -78,7 +78,7 @@ const CaseStudyHeader: React.FC<CaseStudyHeaderProps> = ({ caseStudy, onBackClic
           {caseStudy?.title}
         </h1>
         
-        <div className="h-1 w-16 bg-forest-DEFAULT rounded mt-2 mb-6"></div>
+        <div className="h-1 w-16 bg-forest-DEFAULT rounded mt-2 mb-6 mx-auto"></div>
       </div>
     </>
   );
