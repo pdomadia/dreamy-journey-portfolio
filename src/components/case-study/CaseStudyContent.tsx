@@ -4,7 +4,6 @@ import { useNavigate } from 'react-router-dom';
 import { ArrowLeft, ArrowRight } from 'lucide-react';
 import { Separator } from '@/components/ui/separator';
 import { CaseStudy, caseStudies } from '@/data/caseStudies';
-import CaseStudyNavigation from './CaseStudyNavigation';
 import IntroductionSection from './sections/IntroductionSection';
 import ProjectOverviewSection from './sections/ProjectOverviewSection';
 import ChallengeSection from './sections/ChallengeSection';
@@ -32,17 +31,6 @@ const CaseStudyContent: React.FC<CaseStudyContentProps> = ({ caseStudy }) => {
     sessionStorage.setItem('scrollPosition', '0'); // Reset to top for new case study
     navigate(`/case-study/${slug}`);
   };
-
-  // Define sections for navigation
-  const sections = [
-    { id: "introduction", label: "Introduction" },
-    { id: "project-overview", label: "Project Overview" },
-    { id: "challenge", label: "Challenge" },
-    { id: "research", label: "Research" },
-    { id: "solution", label: "Solution" },
-    { id: "impact", label: "Impact" },
-    { id: "conclusion", label: "Conclusion" }
-  ];
 
   const renderContent = () => {
     if (caseStudy.fullContent) {
@@ -126,56 +114,41 @@ const CaseStudyContent: React.FC<CaseStudyContentProps> = ({ caseStudy }) => {
 
   return (
     <div>
-      {/* Show top navigation on small screens, side navigation on larger screens */}
-      <div className="md:hidden">
-        <CaseStudyNavigation sections={sections} position="top" />
-      </div>
+      {renderContent()}
       
-      <div className="flex gap-8">
-        {/* Side Navigation - visible on medium screens and up */}
-        <div className="hidden md:block w-48">
-          <CaseStudyNavigation sections={sections} position="side" />
-        </div>
-        
-        {/* Main Content */}
-        <div className="flex-1">
-          {renderContent()}
-          
-          {/* Case Study Navigation */}
-          <div className="mt-16 pt-8 border-t border-gray-200">
-            <div className="flex justify-between items-center">
-              {/* Previous Case Study Link */}
-              {prevCaseStudy && (
-                <div 
-                  onClick={() => handleNavigation(prevCaseStudy.slug)}
-                  className="flex items-center gap-2 text-gray-700 hover:text-primary transition-colors cursor-pointer"
-                >
-                  <ArrowLeft size={16} />
-                  <div className="flex flex-col items-start">
-                    <span className="text-xs text-gray-500">Previous Case Study</span>
-                    <span className="text-sm font-medium">{prevCaseStudy.title}</span>
-                  </div>
-                </div>
-              )}
-              
-              {/* Spacer when only next link is shown */}
-              {!prevCaseStudy && nextCaseStudy && <div></div>}
-              
-              {/* Next Case Study Link */}
-              {nextCaseStudy && (
-                <div 
-                  onClick={() => handleNavigation(nextCaseStudy.slug)}
-                  className="flex items-center gap-2 text-gray-700 hover:text-primary transition-colors cursor-pointer ml-auto"
-                >
-                  <div className="flex flex-col items-end">
-                    <span className="text-xs text-gray-500">Next Case Study</span>
-                    <span className="text-sm font-medium">{nextCaseStudy.title}</span>
-                  </div>
-                  <ArrowRight size={16} />
-                </div>
-              )}
+      {/* Case Study Navigation */}
+      <div className="mt-16 pt-8 border-t border-gray-200">
+        <div className="flex justify-between items-center">
+          {/* Previous Case Study Link */}
+          {prevCaseStudy && (
+            <div 
+              onClick={() => handleNavigation(prevCaseStudy.slug)}
+              className="flex items-center gap-2 text-gray-700 hover:text-primary transition-colors cursor-pointer"
+            >
+              <ArrowLeft size={16} />
+              <div className="flex flex-col items-start">
+                <span className="text-xs text-gray-500">Previous Case Study</span>
+                <span className="text-sm font-medium">{prevCaseStudy.title}</span>
+              </div>
             </div>
-          </div>
+          )}
+          
+          {/* Spacer when only next link is shown */}
+          {!prevCaseStudy && nextCaseStudy && <div></div>}
+          
+          {/* Next Case Study Link */}
+          {nextCaseStudy && (
+            <div 
+              onClick={() => handleNavigation(nextCaseStudy.slug)}
+              className="flex items-center gap-2 text-gray-700 hover:text-primary transition-colors cursor-pointer ml-auto"
+            >
+              <div className="flex flex-col items-end">
+                <span className="text-xs text-gray-500">Next Case Study</span>
+                <span className="text-sm font-medium">{nextCaseStudy.title}</span>
+              </div>
+              <ArrowRight size={16} />
+            </div>
+          )}
         </div>
       </div>
     </div>

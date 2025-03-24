@@ -30,15 +30,16 @@ const CaseStudyNavigation: React.FC<CaseStudyNavigationProps> = ({
   if (position === 'side') {
     return (
       <div className={cn(
-        "sticky top-24 self-start",
+        "sticky top-24 self-start bg-white rounded-xl border border-gray-200 shadow-sm p-4",
         className
       )}>
-        <nav className="flex flex-col gap-3 border-l border-gray-200 pl-4">
+        <h3 className="font-medium text-gray-800 mb-3 px-3">Jump to section</h3>
+        <nav className="flex flex-col gap-1">
           {sections.map((section) => (
             <button
               key={section.id}
               onClick={() => scrollToSection(section.id)}
-              className="px-3 py-1.5 text-sm font-medium text-gray-600 hover:text-primary text-left hover:bg-primary/10 rounded-md whitespace-nowrap transition-colors"
+              className="px-3 py-2 text-sm font-medium text-gray-600 hover:text-primary text-left hover:bg-primary/10 rounded-md whitespace-nowrap transition-colors"
             >
               {section.label}
             </button>
