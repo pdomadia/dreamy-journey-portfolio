@@ -53,7 +53,7 @@ export const caseStudies: CaseStudy[] = [
   },
   {
     id: 2,
-    title: 'Customer Success & Accessibility',
+    title: 'Navigating the Gap: Building a User-Centric Digital Platform for Home Exercise Plans',
     subtitle: 'UX Research',
     description: 'Tackling the challenge of technology adoption among senior citizens through empathetic design and simplified user interfaces.',
     imageUrl: 'https://images.unsplash.com/photo-1516574187841-cb9cc2ca948b?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
