@@ -1,8 +1,10 @@
+
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
 import { ArrowLeft, ArrowRight } from 'lucide-react';
 import { Separator } from '@/components/ui/separator';
 import { CaseStudy, caseStudies } from '@/data/caseStudies';
+import CaseStudyNavigation from './CaseStudyNavigation';
 import IntroductionSection from './sections/IntroductionSection';
 import ProjectOverviewSection from './sections/ProjectOverviewSection';
 import ChallengeSection from './sections/ChallengeSection';
@@ -31,41 +33,66 @@ const CaseStudyContent: React.FC<CaseStudyContentProps> = ({ caseStudy }) => {
     navigate(`/case-study/${slug}`);
   };
 
+  // Define sections for navigation
+  const sections = [
+    { id: "introduction", label: "Introduction" },
+    { id: "project-overview", label: "Project Overview" },
+    { id: "challenge", label: "Challenge" },
+    { id: "research", label: "Research" },
+    { id: "solution", label: "Solution" },
+    { id: "impact", label: "Impact" },
+    { id: "conclusion", label: "Conclusion" }
+  ];
+
   const renderContent = () => {
     if (caseStudy.fullContent) {
       return (
         <div className="space-y-8 text-gray-700">
-          <IntroductionSection introduction={caseStudy.fullContent.introduction || ''} />
+          <div id="introduction">
+            <IntroductionSection introduction={caseStudy.fullContent.introduction || ''} />
+          </div>
 
           <Separator className="my-6" />
 
-          <ProjectOverviewSection 
-            projectOverview={caseStudy.fullContent.projectOverview || ''} 
-            role={caseStudy.fullContent.role}
-          />
-
-          <Separator className="my-6" />
-          
-          <ChallengeSection challenge={caseStudy.fullContent.challenge || ''} />
-
-          <Separator className="my-6" />
-          
-          <ResearchSection 
-            methodologies={caseStudy.fullContent.research?.methodologies} 
-            insights={caseStudy.fullContent.research?.insights}
-          />
+          <div id="project-overview">
+            <ProjectOverviewSection 
+              projectOverview={caseStudy.fullContent.projectOverview || ''} 
+              role={caseStudy.fullContent.role}
+            />
+          </div>
 
           <Separator className="my-6" />
           
-          <SolutionSection solution={caseStudy.fullContent.solution || ''} />
+          <div id="challenge">
+            <ChallengeSection challenge={caseStudy.fullContent.challenge || ''} />
+          </div>
 
           <Separator className="my-6" />
           
-          <ImpactSection impact={caseStudy.fullContent.impact || ''} />
+          <div id="research">
+            <ResearchSection 
+              methodologies={caseStudy.fullContent.research?.methodologies} 
+              insights={caseStudy.fullContent.research?.insights}
+            />
+          </div>
 
           <Separator className="my-6" />
           
-          <ConclusionSection conclusion={caseStudy.fullContent.conclusion || ''} />
+          <div id="solution">
+            <SolutionSection solution={caseStudy.fullContent.solution || ''} />
+          </div>
+
+          <Separator className="my-6" />
+          
+          <div id="impact">
+            <ImpactSection impact={caseStudy.fullContent.impact || ''} />
+          </div>
+
+          <Separator className="my-6" />
+          
+          <div id="conclusion">
+            <ConclusionSection conclusion={caseStudy.fullContent.conclusion || ''} />
+          </div>
         </div>
       );
     }
@@ -99,6 +126,8 @@ const CaseStudyContent: React.FC<CaseStudyContentProps> = ({ caseStudy }) => {
 
   return (
     <div>
+      <CaseStudyNavigation sections={sections} />
+      
       {renderContent()}
       
       {/* Case Study Navigation */}
