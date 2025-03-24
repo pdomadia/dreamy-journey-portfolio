@@ -75,7 +75,7 @@ const CaseStudyHeader: React.FC<CaseStudyHeaderProps> = ({ caseStudy, onBackClic
         </div>
         
         <h1 className="text-3xl md:text-4xl font-serif font-semibold text-gray-900 mb-4">
-          Case Study: {caseStudy?.title}
+          {caseStudy?.title}
         </h1>
         
         <div className="h-1 w-16 bg-forest-DEFAULT rounded mt-2 mb-6"></div>
