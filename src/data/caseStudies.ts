@@ -58,6 +58,28 @@ export const caseStudies: CaseStudy[] = [
     description: 'Tackling the challenge of technology adoption among senior citizens through empathetic design and simplified user interfaces.',
     imageUrl: 'https://images.unsplash.com/photo-1516574187841-cb9cc2ca948b?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
     slug: 'accessibility',
+    fullContent: {
+      introduction: "In healthcare settings, home exercise programs are crucial for patient recovery, yet their traditional paper-based delivery presents significant challenges. Patients, particularly seniors, frequently misplace instructions or misinterpret exercises, while healthcare providers struggle with tracking adherence and managing treatment plans effectively. This case study explores how Salaso aimed to transform this process through digitization, providing clear video demonstrations, efficient treatment templates, customizable plans, and robust progress tracking.",
+      projectOverview: "Salaso sought to replace traditional paper handouts with a digital platform that would solve key problems: patients losing or misunderstanding instructions, lack of adherence tracking, and inefficient treatment plan management. The solution aimed to offer video demonstrations for clarity, pre-made templates for efficiency, customizable treatment plans, and patient feedback tracking for measurable outcomes.",
+      role: "Though officially titled Clinical Liaison & Product Specialist, I functioned as a UX Researcher in the startup environment. I conducted comprehensive user research through interviews, shadowing sessions, and competitive analysis to identify workflow inefficiencies and user pain points. My responsibilities included communicating research findings to influence product decisions and advocating for usability improvements to drive adoption and retention.",
+      challenge: "The project faced several challenges: low adoption rates among both healthcare providers and patients, difficulty transitioning users from paper-based methods to digital solutions, and creating an interface accessible to senior citizens with limited technology experience. The primary goals were to increase adoption and retention, improve usability and efficiency, and identify and address barriers preventing widespread adoption.",
+      research: {
+        methodologies: [
+          "User Interviews & Shadowing – Direct observation of physicians and therapists using the platform in their workflow",
+          "Competitive Analysis – Evaluation of similar healthcare solutions to gather usability insights",
+          "Weekly Feedback Calls – Regular collection of insights from healthcare providers using the system"
+        ],
+        insights: [
+          "Limited provider engagement directly led to low patient adoption, as patients weren't properly introduced to the platform",
+          "Initial enthusiasm among healthcare providers didn't translate to long-term adoption due to time constraints",
+          "The platform incorrectly focused on physicians when therapists were more involved in rehabilitation",
+          "Many senior patients lacked email addresses, creating barriers to platform access"
+        ]
+      },
+      solution: "Based on research findings, we influenced product and design decisions to reconsider user flows, explore alternative login options (phone numbers instead of emails), and introduce usability improvements like better template access and simplified onboarding. I presented usability reports to leadership and developed personas, journey maps, and process improvement guides to influence the product roadmap. Eventually, this led to the development of Version 2, which incorporated many research-driven design improvements.",
+      impact: "The research findings shaped long-term platform improvements, though immediate adoption metrics were affected by business decisions to restructure client relationships. The lead designer took ownership of UI/UX changes, incorporating research insights into a significant platform revision. While the impact wasn't immediately measurable in adoption metrics, the research fundamentally influenced the platform's evolution.",
+      conclusion: "This project reinforced several critical lessons: tech adoption in healthcare is inherently slow as behavior change takes time, senior citizens require highly accessible and simple solutions, and UX research must influence business strategy to drive adoption. The experience highlighted the complexity of introducing technology into traditional healthcare settings and demonstrated the need for both behavioral and technological solutions to drive meaningful change in digital healthcare."
+    }
   },
   {
     id: 3,
