@@ -42,7 +42,7 @@ const CaseStudyPage: React.FC = () => {
 
   return (
     <Layout>
-      <div className="container-custom pt-24 pb-20 max-w-4xl mx-auto">
+      <div className="container-custom pt-24 pb-20 max-w-5xl mx-auto">
         <CaseStudyHeader caseStudy={caseStudy} onBackClick={handleBackClick} />
 
         <div className="bg-white rounded-xl shadow-sm border border-gray-200 p-8 mb-12">

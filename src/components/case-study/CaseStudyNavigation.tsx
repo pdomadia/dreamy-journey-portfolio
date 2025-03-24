@@ -8,9 +8,14 @@ interface CaseStudyNavigationProps {
     label: string;
   }[];
   className?: string;
+  position?: 'top' | 'side';
 }
 
-const CaseStudyNavigation: React.FC<CaseStudyNavigationProps> = ({ sections, className }) => {
+const CaseStudyNavigation: React.FC<CaseStudyNavigationProps> = ({ 
+  sections, 
+  className,
+  position = 'top'
+}) => {
   const scrollToSection = (id: string) => {
     const element = document.getElementById(id);
     if (element) {
@@ -21,6 +26,27 @@ const CaseStudyNavigation: React.FC<CaseStudyNavigationProps> = ({ sections, cla
       window.scrollTo({ top: y, behavior: 'smooth' });
     }
   };
+
+  if (position === 'side') {
+    return (
+      <div className={cn(
+        "sticky top-24 self-start",
+        className
+      )}>
+        <nav className="flex flex-col gap-3 border-l border-gray-200 pl-4">
+          {sections.map((section) => (
+            <button
+              key={section.id}
+              onClick={() => scrollToSection(section.id)}
+              className="px-3 py-1.5 text-sm font-medium text-gray-600 hover:text-primary text-left hover:bg-primary/10 rounded-md whitespace-nowrap transition-colors"
+            >
+              {section.label}
+            </button>
+          ))}
+        </nav>
+      </div>
+    );
+  }
 
   return (
     <div className={cn("mb-6 py-3 border-y border-gray-200 sticky top-0 bg-white/95 backdrop-blur-sm z-10", className)}>
