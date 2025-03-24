@@ -30,7 +30,7 @@ const CaseStudyNavigation: React.FC<CaseStudyNavigationProps> = ({
   if (position === 'side') {
     return (
       <div className={cn(
-        "sticky top-24 self-start bg-white rounded-xl border border-gray-200 shadow-sm p-4",
+        "sticky top-24 self-start p-4",
         className
       )}>
         <h3 className="font-medium text-gray-800 mb-3 px-3">Jump to section</h3>
