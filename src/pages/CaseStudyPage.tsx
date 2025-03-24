@@ -54,18 +54,18 @@ const CaseStudyPage: React.FC = () => {
 
   return (
     <Layout>
-      <div className="container-custom pt-24 pb-20 max-w-6xl mx-auto">
+      <div className="container-custom pt-24 pb-20 max-w-7xl mx-auto">
         <CaseStudyHeader caseStudy={caseStudy} onBackClick={handleBackClick} />
 
         <div className="flex flex-col md:flex-row gap-6 mt-8">
           {/* Side Navigation - visible on all screens */}
-          <div className="md:w-64">
+          <div className="md:w-56">
             <CaseStudyNavigation sections={sections} position="side" className="mb-6 md:mb-0" />
           </div>
           
           {/* Main Content */}
           <div className="flex-1">
-            <div className="bg-white rounded-xl shadow-sm border border-gray-200 p-8 mb-12">
+            <div className="bg-white rounded-xl shadow-sm border border-gray-200 p-6 md:p-8 mb-12">
               <CaseStudyContent caseStudy={caseStudy} />
             </div>
           </div>
