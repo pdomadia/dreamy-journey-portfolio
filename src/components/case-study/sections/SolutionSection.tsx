@@ -8,6 +8,9 @@ interface SolutionSectionProps {
 }
 
 const SolutionSection: React.FC<SolutionSectionProps> = ({ solution }) => {
+  // Add console logs to check if component is being rendered
+  console.log("Rendering SolutionSection component");
+  
   return (
     <section>
       <SectionTitle 
@@ -28,10 +31,15 @@ const SolutionSection: React.FC<SolutionSectionProps> = ({ solution }) => {
             <div className="text-gray-800 font-medium mb-4">Original Interface</div>
             <div className="grid md:grid-cols-2 gap-6">
               <div className="border border-gray-200 rounded-lg overflow-hidden">
+                {/* Add console logs to check image paths */}
                 <img 
                   src="/lovable-uploads/cd5a15e4-2ad4-4131-a541-25122cbadc26.png" 
                   alt="Original settings interface"
                   className="w-full h-auto"
+                  onError={(e) => {
+                    console.error("Error loading image:", e.currentTarget.src);
+                    e.currentTarget.src = "/placeholder.svg";
+                  }}
                 />
                 <p className="text-xs text-gray-500 p-3 border-t">
                   Complex settings with limited categorization options
@@ -42,6 +50,10 @@ const SolutionSection: React.FC<SolutionSectionProps> = ({ solution }) => {
                   src="/lovable-uploads/ba9809e1-e2fa-443a-81ca-03650309e89f.png" 
                   alt="Original appointment interface"
                   className="w-full h-auto"
+                  onError={(e) => {
+                    console.error("Error loading image:", e.currentTarget.src);
+                    e.currentTarget.src = "/placeholder.svg";
+                  }}
                 />
                 <p className="text-xs text-gray-500 p-3 border-t">
                   Basic appointment management without information categorization
@@ -59,6 +71,10 @@ const SolutionSection: React.FC<SolutionSectionProps> = ({ solution }) => {
                   src="/lovable-uploads/0230be7e-9cbe-48ea-b0fa-b621bf5f7be0.png" 
                   alt="New settings interface"
                   className="w-full h-auto"
+                  onError={(e) => {
+                    console.error("Error loading image:", e.currentTarget.src);
+                    e.currentTarget.src = "/placeholder.svg";
+                  }}
                 />
                 <p className="text-xs text-gray-500 p-3 border-t">
                   Enhanced settings with clear information categorization
@@ -69,6 +85,10 @@ const SolutionSection: React.FC<SolutionSectionProps> = ({ solution }) => {
                   src="/lovable-uploads/cd9edc57-5fb7-4220-bbea-e2e62c1a5117.png" 
                   alt="New appointment interface"
                   className="w-full h-auto"
+                  onError={(e) => {
+                    console.error("Error loading image:", e.currentTarget.src);
+                    e.currentTarget.src = "/placeholder.svg";
+                  }}
                 />
                 <p className="text-xs text-gray-500 p-3 border-t">
                   Streamlined appointment creation with information type selection
