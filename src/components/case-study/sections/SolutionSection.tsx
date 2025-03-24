@@ -22,33 +22,59 @@ const SolutionSection: React.FC<SolutionSectionProps> = ({ solution }) => {
         </p>
 
         {/* Solution visual */}
-        <div className="grid md:grid-cols-2 gap-6 my-6 p-5 bg-gray-50 rounded-lg border border-gray-200">
-          <div className="bg-white p-4 rounded-lg border border-gray-200 shadow-sm">
-            <div className="text-gray-800 font-medium mb-2">Before Solution</div>
-            <div className="bg-gray-100 p-3 rounded">
-              <div className="h-6 bg-gray-300 rounded mb-2"></div>
-              <div className="h-4 bg-gray-300 rounded w-3/4 mb-2"></div>
-              <div className="h-4 bg-gray-300 rounded w-1/2"></div>
-            </div>
-            <p className="text-xs text-gray-500 mt-3">
-              Old interface with limited categorization options
-            </p>
-          </div>
-          <div className="bg-white p-4 rounded-lg border border-gray-200 shadow-sm">
-            <div className="text-forest-DEFAULT font-medium mb-2">After Solution</div>
-            <div className="bg-gray-100 p-3 rounded">
-              <div className="h-6 bg-forest-light rounded mb-2"></div>
-              <div className="h-4 bg-forest-light rounded w-3/4 mb-2"></div>
-              <div className="flex gap-2 mb-2">
-                <div className="h-4 w-1/4 bg-blue-200 rounded"></div>
-                <div className="h-4 w-1/4 bg-green-200 rounded"></div>
-                <div className="h-4 w-1/4 bg-amber-200 rounded"></div>
+        <div className="space-y-6 my-6">
+          {/* Original Interface */}
+          <div className="bg-white p-6 rounded-lg border border-gray-200 shadow-sm">
+            <div className="text-gray-800 font-medium mb-4">Original Interface</div>
+            <div className="grid md:grid-cols-2 gap-6">
+              <div className="border border-gray-200 rounded-lg overflow-hidden">
+                <img 
+                  src="/lovable-uploads/cd5a15e4-2ad4-4131-a541-25122cbadc26.png" 
+                  alt="Original settings interface"
+                  className="w-full h-auto"
+                />
+                <p className="text-xs text-gray-500 p-3 border-t">
+                  Complex settings with limited categorization options
+                </p>
               </div>
-              <div className="h-4 bg-forest-light rounded w-1/2"></div>
+              <div className="border border-gray-200 rounded-lg overflow-hidden">
+                <img 
+                  src="/lovable-uploads/ba9809e1-e2fa-443a-81ca-03650309e89f.png" 
+                  alt="Original appointment interface"
+                  className="w-full h-auto"
+                />
+                <p className="text-xs text-gray-500 p-3 border-t">
+                  Basic appointment management without information categorization
+                </p>
+              </div>
             </div>
-            <p className="text-xs text-gray-500 mt-3">
-              New interface with categorization by information needs
-            </p>
+          </div>
+
+          {/* New Interface */}
+          <div className="bg-white p-6 rounded-lg border border-gray-200 shadow-sm">
+            <div className="text-forest-DEFAULT font-medium mb-4">New Interface</div>
+            <div className="grid md:grid-cols-2 gap-6">
+              <div className="border border-gray-200 rounded-lg overflow-hidden">
+                <img 
+                  src="/lovable-uploads/0230be7e-9cbe-48ea-b0fa-b621bf5f7be0.png" 
+                  alt="New settings interface"
+                  className="w-full h-auto"
+                />
+                <p className="text-xs text-gray-500 p-3 border-t">
+                  Enhanced settings with clear information categorization
+                </p>
+              </div>
+              <div className="border border-gray-200 rounded-lg overflow-hidden">
+                <img 
+                  src="/lovable-uploads/cd9edc57-5fb7-4220-bbea-e2e62c1a5117.png" 
+                  alt="New appointment interface"
+                  className="w-full h-auto"
+                />
+                <p className="text-xs text-gray-500 p-3 border-t">
+                  Streamlined appointment creation with information type selection
+                </p>
+              </div>
+            </div>
           </div>
         </div>
       </div>
