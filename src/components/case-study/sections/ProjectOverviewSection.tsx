@@ -28,7 +28,7 @@ const ProjectOverviewSection: React.FC<ProjectOverviewSectionProps> = ({
                 <div>
                   <p className="font-medium text-blue-800 mb-1">Objective:</p>
                   <p className="text-blue-800">
-                    {projectOverview}
+                    This project aimed to overhaul the inefficient scheduling system at multiple oncology clinics, ensuring that every meeting between office managers and pharmaceutical representatives was as productive as possible.
                   </p>
                 </div>
               </div>
