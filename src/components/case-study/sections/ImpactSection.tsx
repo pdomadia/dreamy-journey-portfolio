@@ -1,13 +1,9 @@
 
 import React from 'react';
-import { ChartBar, Quote, CalendarDays, LayoutDashboard } from 'lucide-react';
+import { Quote, CalendarDays, LayoutDashboard } from 'lucide-react';
 import SectionTitle from '../SectionTitle';
-import { 
-  Chart, 
-  ChartContainer 
-} from '@/components/ui/chart';
-import { LineChart, Line, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer } from 'recharts';
 import { Card, CardContent } from '@/components/ui/card';
+import { LineChart, Line, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer } from 'recharts';
 
 interface ImpactSectionProps {
   impact: string;
