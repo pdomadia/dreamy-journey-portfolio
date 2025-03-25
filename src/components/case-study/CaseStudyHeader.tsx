@@ -12,6 +12,7 @@ import {
   BreadcrumbSeparator,
 } from '@/components/ui/breadcrumb';
 import { CaseStudy } from '@/data/caseStudies';
+import CaseStudyInfoBar from './CaseStudyInfoBar';
 
 interface CaseStudyHeaderProps {
   caseStudy: CaseStudy;
@@ -80,6 +81,11 @@ const CaseStudyHeader: React.FC<CaseStudyHeaderProps> = ({ caseStudy, onBackClic
         
         <div className="h-1 w-16 bg-forest-DEFAULT rounded mt-2 mb-6 mx-auto"></div>
       </div>
+
+      {/* Info Bar - Only show for specific case studies */}
+      {caseStudy?.slug === 'health-tech' && (
+        <CaseStudyInfoBar />
+      )}
     </>
   );
 };
