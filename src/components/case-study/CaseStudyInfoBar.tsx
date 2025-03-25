@@ -1,7 +1,7 @@
 
 import React from 'react';
 import { Separator } from '@/components/ui/separator';
-import { User, ExternalLink, FileStack } from 'lucide-react';
+import { User, ExternalLink, FileStack, Trello, BarChart4 } from 'lucide-react';
 import { Badge } from '@/components/ui/badge';
 
 // Define interface for Tool type
@@ -21,10 +21,10 @@ const CaseStudyInfoBar = ({
   website = "rxvantage.com",
   tools = [
     { name: "User Interviews", icon: <User size={16} /> },
-    { name: "Figma", icon: <FileStack size={16} /> },
-    { name: "FigJam", icon: <FileStack size={16} /> },
-    { name: "Heap", icon: <FileStack size={16} /> },
-    { name: "Jira", icon: <FileStack size={16} /> },
+    { name: "Figma", icon: <FileStack size={16} className="text-[#F24E1E]" /> },
+    { name: "FigJam", icon: <FileStack size={16} className="text-[#A259FF]" /> },
+    { name: "Heap", icon: <BarChart4 size={16} className="text-[#3EAAAF]" /> },
+    { name: "Jira", icon: <Trello size={16} className="text-[#0052CC]" /> },
   ]
 }: CaseStudyInfoBarProps) => {
   return (
