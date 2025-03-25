@@ -2,7 +2,6 @@
 import React from 'react';
 import { Separator } from '@/components/ui/separator';
 import { ExternalLink } from 'lucide-react';
-import { Badge } from '@/components/ui/badge';
 
 // Define interface for Tool type
 interface Tool {
@@ -68,12 +67,11 @@ const CaseStudyInfoBar = ({
         {/* Tools Section */}
         <div className="flex items-center flex-wrap gap-2">
           <span className="font-medium mr-1">Tools:</span>
-          <div className="flex flex-wrap gap-2">
+          <div className="flex flex-wrap gap-3">
             {tools.map((tool, index) => (
-              <Badge 
+              <div 
                 key={index} 
-                variant="outline"
-                className="flex items-center gap-1 bg-white text-gray-600 hover:bg-gray-100 transition-colors"
+                className="flex items-center gap-1.5"
               >
                 <img 
                   src={tool.iconSrc} 
@@ -81,7 +79,11 @@ const CaseStudyInfoBar = ({
                   className="w-4 h-4 object-contain" 
                 />
                 <span>{tool.name}</span>
-              </Badge>
+                {/* Add a separator after each tool except the last one */}
+                {index < tools.length - 1 && (
+                  <span className="text-gray-300">•</span>
+                )}
+              </div>
             ))}
           </div>
         </div>
