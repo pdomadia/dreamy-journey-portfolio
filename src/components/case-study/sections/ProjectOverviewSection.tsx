@@ -21,7 +21,7 @@ const ProjectOverviewSection: React.FC<ProjectOverviewSectionProps> = ({
         {/* Project Overview Card with the new color palette */}
         <Card className="border border-teal-200 shadow-sm hover:shadow-md transition-shadow duration-300">
           <CardContent className="p-0">
-            <div className="bg-cream p-6 rounded-lg">
+            <div className="bg-gradient-to-r from-rose-50 to-yellow-50 p-6 rounded-lg">
               <div className="flex items-start">
                 <div className="bg-white p-3 rounded-full shadow-sm mr-4 border border-teal-100 transform transition-transform hover:scale-105 duration-300">
                   <Target className="text-teal-600" size={22} />
@@ -41,7 +41,7 @@ const ProjectOverviewSection: React.FC<ProjectOverviewSectionProps> = ({
         {role && (
           <Card className="border border-amber-400 shadow-sm hover:shadow-md transition-shadow duration-300">
             <CardContent className="p-0">
-              <div className="bg-gradient-to-r from-cream to-earthy-light p-6 rounded-lg">
+              <div className="bg-gradient-to-r from-amber-50 to-orange-50 p-6 rounded-lg">
                 <div className="flex items-start">
                   <div className="bg-white p-3 rounded-full shadow-sm mr-4 border border-amber-200 transform transition-transform hover:scale-105 duration-300">
                     <UserCircle2 className="text-amber-600" size={22} />
