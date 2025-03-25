@@ -1,13 +1,13 @@
 
 import React from 'react';
 import { Separator } from '@/components/ui/separator';
-import { User, ExternalLink, FileStack, Trello, BarChart4 } from 'lucide-react';
+import { ExternalLink } from 'lucide-react';
 import { Badge } from '@/components/ui/badge';
 
 // Define interface for Tool type
 interface Tool {
   name: string;
-  icon: React.ReactNode;
+  iconSrc: string;
 }
 
 interface CaseStudyInfoBarProps {
@@ -20,11 +20,22 @@ const CaseStudyInfoBar = ({
   client = "RxVantage",
   website = "rxvantage.com",
   tools = [
-    { name: "User Interviews", icon: <User size={16} /> },
-    { name: "Figma", icon: <FileStack size={16} className="text-[#F24E1E]" /> },
-    { name: "FigJam", icon: <FileStack size={16} className="text-[#A259FF]" /> },
-    { name: "Heap", icon: <BarChart4 size={16} className="text-[#3EAAAF]" /> },
-    { name: "Jira", icon: <Trello size={16} className="text-[#0052CC]" /> },
+    { 
+      name: "User Interviews", 
+      iconSrc: "/lovable-uploads/e1d76ca1-5c5c-402d-8ff0-e8b37cab26a0.png" 
+    },
+    { 
+      name: "Figma", 
+      iconSrc: "/lovable-uploads/f4b2905e-c5b9-4fb3-bb5f-d316cfae6db5.png" 
+    },
+    { 
+      name: "Heap", 
+      iconSrc: "/lovable-uploads/47771f7c-3d67-4ad6-a474-09a6d5d303ab.png" 
+    },
+    { 
+      name: "Jira", 
+      iconSrc: "/lovable-uploads/85fcfc11-3a56-4ebc-9e1f-13803ccf84cf.png" 
+    },
   ]
 }: CaseStudyInfoBarProps) => {
   return (
@@ -64,7 +75,11 @@ const CaseStudyInfoBar = ({
                 variant="outline"
                 className="flex items-center gap-1 bg-white text-gray-600 hover:bg-gray-100 transition-colors"
               >
-                {tool.icon}
+                <img 
+                  src={tool.iconSrc} 
+                  alt={`${tool.name} icon`} 
+                  className="w-4 h-4 object-contain" 
+                />
                 <span>{tool.name}</span>
               </Badge>
             ))}
