@@ -1,9 +1,14 @@
 
-import React from 'react';
+import React, { useEffect } from 'react';
 import CaseStudyCard from './CaseStudyCard';
 import { caseStudies } from '@/data/caseStudies';
 
 const CaseStudies: React.FC = () => {
+  useEffect(() => {
+    console.log('CaseStudies component mounted');
+    console.log('Number of case studies:', caseStudies.length);
+  }, []);
+
   return (
     <section id="case-studies" className="py-20 md:py-28 relative bg-earthy-DEFAULT/30">
       <div className="container-custom">

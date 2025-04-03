@@ -1,6 +1,6 @@
 
 import React from 'react';
-import { Link, useNavigate } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import { ArrowRight } from 'lucide-react';
 import { cn } from '@/lib/utils';
 
@@ -13,62 +13,54 @@ interface CaseStudyCardProps {
   link: string;
 }
 
-const CaseStudyCard: React.FC<CaseStudyCardProps> = ({
-  title,
-  subtitle,
-  description,
-  imageUrl,
+const CaseStudyCard: React.FC<CaseStudyCardProps> = ({ 
+  title, 
+  subtitle, 
+  description, 
+  imageUrl, 
   index,
   link
 }) => {
-  const navigate = useNavigate();
-  
-  const handleClick = (e: React.MouseEvent) => {
-    e.preventDefault(); // Prevent default Link behavior
-    
-    // Save current scroll position
-    sessionStorage.setItem('scrollPosition', window.scrollY.toString());
-    
-    // Navigate without scroll reset
-    navigate(link);
-  };
-
-  // Add console log to debug image URL
   console.log(`Rendering case study card: ${title} with image: ${imageUrl}`);
 
   return (
-    <Link 
-      to={link}
-      onClick={handleClick}
+    <div 
       className={cn(
-        "block flex flex-col rounded-md overflow-hidden bg-white shadow-sm border border-earthy-dark/20 reveal card-hover transition-all duration-500 group h-full",
-        index === 1 ? "reveal-delay-1" : index === 2 ? "reveal-delay-2" : ""
+        "reveal overflow-hidden rounded-xl bg-white shadow-sm border border-gray-200 transition-all duration-500 hover:shadow-md hover:-translate-y-1 flex flex-col h-full",
+        index === 0 ? "reveal" : index === 1 ? "reveal reveal-delay-1" : "reveal reveal-delay-2"
       )}
     >
-      <div className="relative h-52 lg:h-64 overflow-hidden">
-        <div 
-          className="absolute inset-0 bg-cover bg-center transition-transform duration-700 group-hover:scale-105"
-          style={{ backgroundImage: `url('${imageUrl}')` }}
-        />
-        <div className="absolute inset-0 bg-gradient-to-t from-charcoal/50 to-transparent opacity-70" />
-        <div className="absolute bottom-0 left-0 p-6">
-          <span className="text-xs text-earthy-light bg-charcoal/50 backdrop-blur-sm px-3 py-1 rounded-full">
-            {subtitle}
-          </span>
-        </div>
+      <div className="relative overflow-hidden h-56">
+        {imageUrl && (
+          <img 
+            src={imageUrl} 
+            alt={title} 
+            className="w-full h-full object-cover transition-transform duration-500 ease-in-out hover:scale-105"
+            onError={(e) => {
+              console.error(`Failed to load image: ${imageUrl}`);
+              e.currentTarget.src = '/placeholder.svg';
+            }}
+          />
+        )}
+        <div className="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent"></div>
+        <span className="absolute bottom-3 left-3 text-xs font-medium text-white bg-forest-dark/80 px-2 py-1 rounded-full">
+          {subtitle}
+        </span>
       </div>
       
-      <div className="p-6 flex-grow flex flex-col">
-        <h3 className="text-xl font-medium mb-3">{title}</h3>
-        <p className="text-charcoal/80 mb-4 flex-grow">{description}</p>
-        <div 
-          className="inline-flex items-center gap-2 text-forest-dark group-hover:gap-3 transition-all duration-300"
+      <div className="flex flex-col flex-grow p-5">
+        <h3 className="text-xl font-semibold mb-2 line-clamp-2">{title}</h3>
+        <p className="text-charcoal/80 text-sm line-clamp-3 mb-4 flex-grow">{description}</p>
+        
+        <Link 
+          to={link} 
+          className="inline-flex items-center text-forest-dark font-medium hover:text-hunter-DEFAULT transition-colors group"
         >
-          View case study
-          <ArrowRight size={16} className="transition-transform group-hover:translate-x-1" />
-        </div>
+          View Case Study
+          <ArrowRight size={16} className="ml-1 transition-transform group-hover:translate-x-1" />
+        </Link>
       </div>
-    </Link>
+    </div>
   );
 };
 
