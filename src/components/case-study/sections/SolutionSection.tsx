@@ -36,6 +36,7 @@ const SolutionSection: React.FC<SolutionSectionProps> = ({ solution }) => {
                   src="/lovable-uploads/cd5a15e4-2ad4-4131-a541-25122cbadc26.png" 
                   alt="Original settings interface"
                   className="w-full h-auto"
+                  onLoad={() => console.log("Image loaded successfully: /lovable-uploads/cd5a15e4-2ad4-4131-a541-25122cbadc26.png")}
                   onError={(e) => {
                     console.error("Error loading image:", e.currentTarget.src);
                     e.currentTarget.src = "/placeholder.svg";
@@ -50,6 +51,7 @@ const SolutionSection: React.FC<SolutionSectionProps> = ({ solution }) => {
                   src="/lovable-uploads/ba9809e1-e2fa-443a-81ca-03650309e89f.png" 
                   alt="Original appointment interface"
                   className="w-full h-auto"
+                  onLoad={() => console.log("Image loaded successfully: /lovable-uploads/ba9809e1-e2fa-443a-81ca-03650309e89f.png")}
                   onError={(e) => {
                     console.error("Error loading image:", e.currentTarget.src);
                     e.currentTarget.src = "/placeholder.svg";
@@ -71,6 +73,7 @@ const SolutionSection: React.FC<SolutionSectionProps> = ({ solution }) => {
                   src="/lovable-uploads/0230be7e-9cbe-48ea-b0fa-b621bf5f7be0.png" 
                   alt="New settings interface"
                   className="w-full h-auto"
+                  onLoad={() => console.log("Image loaded successfully: /lovable-uploads/0230be7e-9cbe-48ea-b0fa-b621bf5f7be0.png")}
                   onError={(e) => {
                     console.error("Error loading image:", e.currentTarget.src);
                     e.currentTarget.src = "/placeholder.svg";
@@ -85,6 +88,7 @@ const SolutionSection: React.FC<SolutionSectionProps> = ({ solution }) => {
                   src="/lovable-uploads/cd9edc57-5fb7-4220-bbea-e2e62c1a5117.png" 
                   alt="New appointment interface"
                   className="w-full h-auto"
+                  onLoad={() => console.log("Image loaded successfully: /lovable-uploads/cd9edc57-5fb7-4220-bbea-e2e62c1a5117.png")}
                   onError={(e) => {
                     console.error("Error loading image:", e.currentTarget.src);
                     e.currentTarget.src = "/placeholder.svg";

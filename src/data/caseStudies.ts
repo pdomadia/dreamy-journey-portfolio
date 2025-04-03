@@ -1,3 +1,4 @@
+
 export interface CaseStudy {
   id: number;
   title: string;
@@ -55,7 +56,7 @@ export const caseStudies: CaseStudy[] = [
     title: 'Navigating the Gap: Building a User-Centric Digital Platform for Home Exercise Plans',
     subtitle: 'UX Research',
     description: 'Tackling the challenge of technology adoption among senior citizens through empathetic design and simplified user interfaces.',
-    imageUrl: 'https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
+    imageUrl: '/lovable-uploads/51c2a622-a2a6-4bbd-8fbb-829d170ac829.png',
     slug: 'accessibility',
     fullContent: {
       introduction: "In healthcare settings, home exercise programs are crucial for patient recovery, yet their traditional paper-based delivery presents significant challenges. Patients, particularly seniors, frequently misplace instructions or misinterpret exercises, while healthcare providers struggle with tracking adherence and managing treatment plans effectively.\n\nThis case study explores how Salaso aimed to transform this process through digitization, providing clear video demonstrations, efficient treatment templates, customizable plans, and robust progress tracking.",

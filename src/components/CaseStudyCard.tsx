@@ -36,6 +36,7 @@ const CaseStudyCard: React.FC<CaseStudyCardProps> = ({
             src={imageUrl} 
             alt={title} 
             className="w-full h-full object-cover transition-transform duration-500 ease-in-out hover:scale-105"
+            onLoad={() => console.log(`Successfully loaded image for ${title}: ${imageUrl}`)}
             onError={(e) => {
               console.error(`Failed to load image: ${imageUrl}`);
               e.currentTarget.src = '/placeholder.svg';
