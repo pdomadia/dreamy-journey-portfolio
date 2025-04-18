@@ -1,5 +1,5 @@
 
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { ArrowRight } from 'lucide-react';
 import { cn } from '@/lib/utils';
@@ -22,9 +22,14 @@ const CaseStudyCard: React.FC<CaseStudyCardProps> = ({
   link
 }) => {
   const [imageError, setImageError] = useState(false);
+  const [isImageLoaded, setIsImageLoaded] = useState(false);
   
-  // Add more detailed debugging
-  console.log(`Rendering case study card: ${title} with image: ${imageUrl}`);
+  // Reset state when image URL changes
+  useEffect(() => {
+    setImageError(false);
+    setIsImageLoaded(false);
+    console.log(`Setting up image: ${imageUrl} for ${title}`);
+  }, [imageUrl, title]);
 
   return (
     <div 
@@ -38,19 +43,32 @@ const CaseStudyCard: React.FC<CaseStudyCardProps> = ({
           <img 
             src={imageUrl} 
             alt={title} 
-            className="w-full h-full object-cover transition-transform duration-500 ease-in-out hover:scale-105"
-            onLoad={() => console.log(`Successfully loaded image for ${title}: ${imageUrl}`)}
+            className={cn(
+              "w-full h-full object-cover transition-transform duration-500 ease-in-out hover:scale-105",
+              isImageLoaded ? "opacity-100" : "opacity-0"
+            )}
+            onLoad={() => {
+              console.log(`Successfully loaded image for ${title}: ${imageUrl}`);
+              setIsImageLoaded(true);
+            }}
             onError={(e) => {
               console.error(`Failed to load image: ${imageUrl}`, e);
               setImageError(true);
             }}
-            style={{display: 'block'}} // Force display as block
           />
         ) : (
           <div className="w-full h-full flex items-center justify-center bg-gray-200">
             <span className="text-gray-500">Image not available</span>
           </div>
         )}
+        
+        {/* Show loading state when image is still loading */}
+        {imageUrl && !imageError && !isImageLoaded && (
+          <div className="absolute inset-0 flex items-center justify-center bg-gray-100">
+            <span className="text-gray-500">Loading image...</span>
+          </div>
+        )}
+        
         <div className="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent"></div>
         <span className="absolute bottom-3 left-3 text-xs font-medium text-white bg-forest-dark/80 px-2 py-1 rounded-full">
           {subtitle}
