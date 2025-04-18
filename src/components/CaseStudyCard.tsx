@@ -23,7 +23,7 @@ const CaseStudyCard: React.FC<CaseStudyCardProps> = ({
 }) => {
   const [imageError, setImageError] = useState(false);
   
-  // Add debugging logs
+  // Add more detailed debugging
   console.log(`Rendering case study card: ${title} with image: ${imageUrl}`);
 
   return (
@@ -33,8 +33,8 @@ const CaseStudyCard: React.FC<CaseStudyCardProps> = ({
         index === 0 ? "reveal" : index === 1 ? "reveal reveal-delay-1" : "reveal reveal-delay-2"
       )}
     >
-      <div className="relative overflow-hidden h-56">
-        {imageUrl && (
+      <div className="relative overflow-hidden h-56 bg-gray-100">
+        {imageUrl && !imageError ? (
           <img 
             src={imageUrl} 
             alt={title} 
@@ -43,9 +43,13 @@ const CaseStudyCard: React.FC<CaseStudyCardProps> = ({
             onError={(e) => {
               console.error(`Failed to load image: ${imageUrl}`, e);
               setImageError(true);
-              e.currentTarget.src = 'https://images.unsplash.com/photo-1488590528505-98d2b5aba04b?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80';
             }}
+            style={{display: 'block'}} // Force display as block
           />
+        ) : (
+          <div className="w-full h-full flex items-center justify-center bg-gray-200">
+            <span className="text-gray-500">Image not available</span>
+          </div>
         )}
         <div className="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent"></div>
         <span className="absolute bottom-3 left-3 text-xs font-medium text-white bg-forest-dark/80 px-2 py-1 rounded-full">
