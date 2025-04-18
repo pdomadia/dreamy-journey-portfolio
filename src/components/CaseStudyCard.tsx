@@ -1,5 +1,5 @@
 
-import React from 'react';
+import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { ArrowRight } from 'lucide-react';
 import { cn } from '@/lib/utils';
@@ -21,6 +21,7 @@ const CaseStudyCard: React.FC<CaseStudyCardProps> = ({
   index,
   link
 }) => {
+  const [imageError, setImageError] = useState(false);
   console.log(`Rendering case study card: ${title} with image: ${imageUrl}`);
 
   return (
@@ -33,13 +34,14 @@ const CaseStudyCard: React.FC<CaseStudyCardProps> = ({
       <div className="relative overflow-hidden h-56">
         {imageUrl && (
           <img 
-            src={imageUrl} 
+            src={imageError ? 'https://images.unsplash.com/photo-1488590528505-98d2b5aba04b?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80' : imageUrl} 
             alt={title} 
             className="w-full h-full object-cover transition-transform duration-500 ease-in-out hover:scale-105"
             onLoad={() => console.log(`Successfully loaded image for ${title}: ${imageUrl}`)}
             onError={(e) => {
-              console.error(`Failed to load image: ${imageUrl}`);
-              e.currentTarget.src = '/placeholder.svg';
+              console.error(`Failed to load image: ${imageUrl}`, e);
+              setImageError(true);
+              e.currentTarget.src = 'https://images.unsplash.com/photo-1488590528505-98d2b5aba04b?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80';
             }}
           />
         )}
