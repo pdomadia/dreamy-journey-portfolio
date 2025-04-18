@@ -5,6 +5,7 @@ import { caseStudies } from '@/data/caseStudies';
 
 const CaseStudies: React.FC = () => {
   const [testImageLoaded, setTestImageLoaded] = useState(false);
+  const testImagePath = '/lovable-uploads/8dfe0153-98a4-4096-8e6b-c8c1824d52c4.png';
 
   useEffect(() => {
     console.log('CaseStudies component mounted');
@@ -14,6 +15,18 @@ const CaseStudies: React.FC = () => {
     caseStudies.forEach(study => {
       console.log(`Case study: ${study.title}, Image URL: ${study.imageUrl}`);
     });
+    
+    // Test if the specific image path is valid by directly creating an image object
+    const testImg = new Image();
+    testImg.onload = () => {
+      console.log(`✅ Test image loaded successfully via JS: ${testImagePath}`);
+      console.log(`Image dimensions: ${testImg.naturalWidth}x${testImg.naturalHeight}`);
+    };
+    testImg.onerror = (e) => {
+      console.error(`❌ Test image failed to load via JS: ${testImagePath}`);
+      console.error('Error details:', e);
+    };
+    testImg.src = testImagePath;
   }, []);
 
   return (
@@ -28,18 +41,20 @@ const CaseStudies: React.FC = () => {
             Explore selected projects that showcase my approach to solving complex problems.
           </p>
           
-          {/* Test image - hidden but helps to debug */}
-          <div className="hidden">
+          {/* Test image - visible for debugging */}
+          <div className="mt-4 p-4 border rounded">
+            <h3 className="text-sm font-bold mb-2">Image Test</h3>
             <img 
-              src="/lovable-uploads/8dfe0153-98a4-4096-8e6b-c8c1824d52c4.png" 
-              alt="Test" 
+              src={testImagePath}
+              alt="Test Image" 
+              style={{ maxWidth: '200px', margin: '0 auto' }}
               onLoad={() => {
-                console.log("Test image loaded successfully");
+                console.log("✅ Test image loaded successfully in DOM");
                 setTestImageLoaded(true);
               }}
-              onError={(e) => console.error("Test image failed to load", e)}
+              onError={(e) => console.error("❌ Test image failed to load in DOM", e)}
             />
-            <p>{testImageLoaded ? "Test image loaded" : "Test image not loaded"}</p>
+            <p className="text-sm mt-2">{testImageLoaded ? "✅ Test image loaded" : "❌ Test image not loaded"}</p>
           </div>
         </div>
         

@@ -27,7 +27,16 @@ const CaseStudyCard: React.FC<CaseStudyCardProps> = ({
   useEffect(() => {
     setImageError(false);
     setIsImageLoaded(false);
-    console.log(`Setting up image: ${imageUrl} for ${title}`);
+    
+    // More detailed logging
+    console.log(`CaseStudy Card - Setting up image for: ${title}`);
+    console.log(`Image URL: "${imageUrl}"`);
+    
+    // Verify the image URL is valid
+    if (!imageUrl || imageUrl.trim() === '') {
+      console.error(`Empty or invalid image URL for: ${title}`);
+      setImageError(true);
+    }
   }, [imageUrl, title]);
 
   return (
@@ -42,24 +51,28 @@ const CaseStudyCard: React.FC<CaseStudyCardProps> = ({
         <div className="relative overflow-hidden h-56 bg-gray-100">
           {imageUrl && !imageError ? (
             <img 
-              src={imageUrl} 
+              src={imageUrl}
               alt={title} 
               className={cn(
                 "w-full h-full object-cover transition-transform duration-500 ease-in-out hover:scale-105",
                 isImageLoaded ? "opacity-100" : "opacity-0"
               )}
-              onLoad={() => {
-                console.log(`Successfully loaded image for ${title}: ${imageUrl}`);
+              onLoad={(e) => {
+                console.log(`✅ Image loaded successfully for ${title}`);
+                console.log(`Image dimensions: ${(e.target as HTMLImageElement).naturalWidth}x${(e.target as HTMLImageElement).naturalHeight}`);
                 setIsImageLoaded(true);
               }}
               onError={(e) => {
-                console.error(`Failed to load image: ${imageUrl}`, e);
+                console.error(`❌ Failed to load image for ${title}: ${imageUrl}`);
+                console.error('Error details:', e);
                 setImageError(true);
               }}
             />
           ) : (
             <div className="w-full h-full flex items-center justify-center bg-gray-200">
-              <span className="text-gray-500">Image not available</span>
+              <span className="text-gray-500">
+                {imageError ? `Image failed to load: ${imageUrl}` : 'Image not available'}
+              </span>
             </div>
           )}
           
