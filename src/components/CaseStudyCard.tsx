@@ -22,6 +22,8 @@ const CaseStudyCard: React.FC<CaseStudyCardProps> = ({
   link
 }) => {
   const [imageError, setImageError] = useState(false);
+  
+  // Add debugging logs
   console.log(`Rendering case study card: ${title} with image: ${imageUrl}`);
 
   return (
@@ -34,7 +36,7 @@ const CaseStudyCard: React.FC<CaseStudyCardProps> = ({
       <div className="relative overflow-hidden h-56">
         {imageUrl && (
           <img 
-            src={imageError ? 'https://images.unsplash.com/photo-1488590528505-98d2b5aba04b?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80' : imageUrl} 
+            src={imageUrl} 
             alt={title} 
             className="w-full h-full object-cover transition-transform duration-500 ease-in-out hover:scale-105"
             onLoad={() => console.log(`Successfully loaded image for ${title}: ${imageUrl}`)}
