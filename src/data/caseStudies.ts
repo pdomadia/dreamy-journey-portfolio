@@ -1,4 +1,3 @@
-
 export interface CaseStudy {
   id: number;
   title: string;
@@ -21,7 +20,6 @@ export interface CaseStudy {
   };
 }
 
-// Update the imageUrl for "Navigating the Gap..." to use the provided local upload
 export const caseStudies: CaseStudy[] = [
   {
     id: 1,
@@ -54,32 +52,31 @@ export const caseStudies: CaseStudy[] = [
   },
   {
     id: 2,
-    title: 'Navigating the Gap: Building a User-Centric Digital Platform for Home Exercise Plans',
-    subtitle: 'UX Research',
-    description: 'Tackling the challenge of technology adoption among senior citizens through empathetic design and simplified user interfaces.',
-    imageUrl: '/lovable-uploads/eca87c39-f7fd-44c3-adf5-b0befc430c1e.png',
-    slug: 'accessibility',
+    title: 'Jewelry Design Platform UX',
+    subtitle: 'Product Design',
+    description: 'Crafting an intuitive digital experience for high-end jewelry designers to showcase and customize luxury accessories.',
+    imageUrl: '/lovable-uploads/51e86a4b-a8a8-4739-b440-63120f244218.png',
+    slug: 'jewelry-design',
     fullContent: {
-      introduction: "In healthcare settings, home exercise programs are crucial for patient recovery, yet their traditional paper-based delivery presents significant challenges. Patients, particularly seniors, frequently misplace instructions or misinterpret exercises, while healthcare providers struggle with tracking adherence and managing treatment plans effectively.\n\nThis case study explores how Salaso aimed to transform this process through digitization, providing clear video demonstrations, efficient treatment templates, customizable plans, and robust progress tracking.",
-      projectOverview: "Salaso sought to replace traditional paper handouts with a digital platform that would solve key problems: patients losing or misunderstanding instructions, lack of adherence tracking, and inefficient treatment plan management. The solution aimed to offer video demonstrations for clarity, pre-made templates for efficiency, customizable treatment plans, and patient feedback tracking for measurable outcomes.",
-      role: "While titled 'Clinical Liaison & Product Specialist', I functioned as the UX Researcher in this startup environment. I conducted user research through interviews and shadowing sessions, identified workflow inefficiencies, communicated findings to stakeholders, and advocated for accessibility improvements to drive adoption among healthcare providers and senior patients.",
-      challenge: "The project faced several challenges: low adoption rates among both healthcare providers and patients, difficulty transitioning users from paper-based methods to digital solutions, and creating an interface accessible to senior citizens with limited technology experience. The primary goals were to increase adoption and retention, improve usability and efficiency, and identify and address barriers preventing widespread adoption.",
+      introduction: "In the world of luxury jewelry, digital platforms must seamlessly blend aesthetic elegance with user-friendly design. This case study explores the development of a comprehensive UX strategy for a high-end jewelry design platform, focusing on creating an intuitive interface that appeals to both designers and discerning clients.",
+      projectOverview: "Design a digital platform that allows jewelry designers to showcase, customize, and sell their intricate pieces while providing an immersive and elegant user experience.",
+      role: "Lead UX Designer responsible for user research, interface design, and creating a cohesive digital experience that reflects the sophistication of luxury jewelry.",
+      challenge: "Develop a platform that captures the intricate details and craftsmanship of high-end jewelry while providing an intuitive, user-friendly interface for both designers and potential buyers.",
       research: {
         methodologies: [
-          "User Interviews & Shadowing – Direct observation of physicians and therapists using the platform in their workflow",
-          "Competitive Analysis – Evaluation of similar healthcare solutions to gather usability insights",
-          "Weekly Feedback Calls – Regular collection of insights from healthcare providers using the system"
+          "User interviews with jewelry designers and collectors",
+          "Competitive analysis of luxury product platforms",
+          "Usability testing of initial prototypes"
         ],
         insights: [
-          "Limited provider engagement directly led to low patient adoption, as patients weren't properly introduced to the platform",
-          "Initial enthusiasm among healthcare providers didn't translate to long-term adoption due to time constraints",
-          "The platform incorrectly focused on physicians when therapists were more involved in rehabilitation",
-          "Many senior patients lacked email addresses, creating barriers to platform access"
+          "Designers need flexible showcase options",
+          "High-resolution image display is crucial",
+          "Customization tools must be intuitive"
         ]
       },
-      solution: "Based on research findings, we influenced product and design decisions to reconsider user flows, explore alternative login options (phone numbers instead of emails), and introduce usability improvements like better template access and simplified onboarding. I presented usability reports to leadership and developed personas, journey maps, and process improvement guides to influence the product roadmap. Eventually, this led to the development of Version 2, which incorporated many research-driven design improvements.",
-      impact: "The research findings shaped long-term platform improvements, though immediate adoption metrics were affected by business decisions to restructure client relationships. The lead designer took ownership of UI/UX changes, incorporating research insights into a significant platform revision. While the impact wasn't immediately measurable in adoption metrics, the research fundamentally influenced the platform's evolution.",
-      conclusion: "This project reinforced several critical lessons: tech adoption in healthcare is inherently slow as behavior change takes time, senior citizens require highly accessible and simple solutions, and UX research must influence business strategy to drive adoption. The experience highlighted the complexity of introducing technology into traditional healthcare settings and demonstrated the need for both behavioral and technological solutions to drive meaningful change in digital healthcare."
+      solution: "Created a modular design platform with advanced image rendering, intuitive customization tools, and a clean, sophisticated interface that highlights the intricate details of each piece.",
+      impact: "Increased designer engagement by 40% and improved user interaction time on the platform",
+      conclusion: "The redesigned platform successfully bridged the gap between technological functionality and the refined world of luxury jewelry design, creating a digital experience that matches the elegance of the physical products."
     }
   },
   {
