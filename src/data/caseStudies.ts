@@ -1,4 +1,3 @@
-
 export interface CaseStudy {
   id: number;
   title: string;
@@ -9,7 +8,11 @@ export interface CaseStudy {
   fullContent?: {
     introduction?: string;
     projectOverview?: string;
-    role?: string;
+    role?: {
+      timeline: string;
+      position: string;
+      team: string;
+    };
     challenge?: string;
     research?: {
       methodologies?: string[];
@@ -21,7 +24,6 @@ export interface CaseStudy {
   };
 }
 
-// Update the imageUrl for "Navigating the Gap..." to use the provided local upload
 export const caseStudies: CaseStudy[] = [
   {
     id: 1,
@@ -31,9 +33,13 @@ export const caseStudies: CaseStudy[] = [
     imageUrl: 'https://images.unsplash.com/photo-1576091160550-2173dba999ef?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
     slug: 'health-tech',
     fullContent: {
-      introduction: "Every morning, Sarah Johnson, an office manager at an oncology clinic, faces a critical task: coordinating meetings between her medical staff and pharmaceutical representatives. The stakes are high—each meeting must provide value, delivering crucial updates on cancer treatments that could influence patient care decisions. Yet, the existing scheduling system often leads to mismatches, wasting precious time and resources. This case study details our journey to develop a solution that not only addresses these mismatches but revolutionizes the way appointments are scheduled to prioritize efficiency and relevance.",
+      introduction: "Every morning, Sarah Johnson, an office manager at an oncology clinic, faces a critical task: coordinating meetings between her medical staff and pharmaceutical representatives. The stakes are high—each meeting must provide value, delivering crucial updates on cancer treatments that could influence patient care decisions. Yet, the existing scheduling system often leads to mismatches, wasting precious time and resources.\n\nThis case study details our journey to develop a solution that not only addresses these mismatches but revolutionizes the way appointments are scheduled to prioritize efficiency and relevance.",
       projectOverview: "To overhaul the inefficient scheduling system used in multiple oncology clinics, ensuring that appointments align perfectly with the clinic's immediate informational needs, enhancing both operational efficiency and patient care quality.",
-      role: "I led UX research initiatives, gathering insights through stakeholder interviews and surveys to identify inefficiencies. Collaborated with a product manager and developer to ensure feasible, user-centric integration of design solutions.",
+      role: {
+        timeline: "Feb 2023 - June 2023",
+        position: "UX Researcher and Designer",
+        team: "Product Manager and Lead Developer"
+      },
       challenge: "Office managers like Sarah were constantly struggling with an outdated system that failed to adequately match pharmaceutical representatives with the clinic's urgent needs, leading to unproductive appointments and direct negative impacts on patient care.",
       research: {
         methodologies: [
