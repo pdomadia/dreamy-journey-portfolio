@@ -23,8 +23,8 @@ const Index: React.FC = () => {
   return (
     <Layout>
       <Hero />
-      <About />
       <CaseStudies />
+      <About />
       <Contact />
     </Layout>
   );

@@ -1,6 +1,5 @@
-
 import React from 'react';
-import { Sparkles, Leaf, Coffee, Linkedin, Mail, FileText } from 'lucide-react';
+import { Linkedin, Mail, FileText } from 'lucide-react';
 import { Button } from "@/components/ui/button";
 
 const About: React.FC = () => {
@@ -29,7 +28,6 @@ const About: React.FC = () => {
               When I'm not designing, I love traveling to new places, finding my zen with new workouts, and experimenting in the kitchen.
               <br /><br />
               Let's connect if you're into accessible design, travel, or food!</p>
-              <p className="text-stone/90 leading-relaxed"></p>
             </div>
             
             <div className="flex flex-wrap gap-3 mt-8 reveal reveal-delay-2">
@@ -62,34 +60,8 @@ const About: React.FC = () => {
             </div>
           </div>
           
-          <div className="md:w-1/2 flex flex-col justify-center">
-            <div className="space-y-8">
-              <div className="bg-white/70 backdrop-blur-sm rounded-xl p-6 shadow-sm border border-sage-dark/10 hover:border-sage-dark/20 transition-all duration-300 reveal card-hover">
-                <Coffee size={24} className="text-hunter-DEFAULT mb-3" />
-                <h3 className="text-xl font-medium mb-2">Healthcare Foundation</h3>
-                <p className="text-stone/80">
-                  Five years in pediatric occupational therapy gave me deep insights into human needs,
-                  accessibility, and the importance of empathetic design.
-                </p>
-              </div>
-              
-              <div className="bg-white/70 backdrop-blur-sm rounded-xl p-6 shadow-sm border border-sage-dark/10 hover:border-sage-dark/20 transition-all duration-300 reveal reveal-delay-2 card-hover">
-                <Sparkles size={24} className="text-hunter-DEFAULT mb-3" />
-                <h3 className="text-xl font-medium mb-2">Tech Explorer</h3>
-                <p className="text-stone/80">
-                  Four years in health tech spanning product design, UX research, customer success, and sales
-                  has equipped me with a holistic understanding of the product lifecycle.
-                </p>
-              </div>
-              
-              <div className="bg-white/70 backdrop-blur-sm rounded-xl p-6 shadow-sm border border-sage-dark/10 hover:border-sage-dark/20 transition-all duration-300 reveal reveal-delay-3 card-hover">
-                <Leaf size={24} className="text-hunter-DEFAULT mb-3" />
-                <h3 className="text-xl font-medium mb-2">Designing with Empathy</h3>
-                <p className="text-stone/80">
-                  Every design tells a story. My background in occupational therapy and UX research has shaped my ability to uncover hidden narratives, ensuring the voices behind the data are heard. I bring empathy and depth to the user experience.
-                </p>
-              </div>
-            </div>
+          <div className="md:w-1/2">
+            {/* Empty div to maintain layout - you can add an image or other content here later if needed */}
           </div>
         </div>
       </div>
